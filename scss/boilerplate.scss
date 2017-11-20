@@ -1,0 +1,11 @@
+// import customizations from the parent directory
+@import "../../scss/variables";
+
+// import Bootstrap 4
+@import "bootstrap-import-config";
+
+// import our boilerplate styles
+@import "base";
+
+// import overrides from the parent directory
+@import "../../scss/theme";

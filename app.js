@@ -1,7 +1,6 @@
-//js scripts
-require('./js/script');
+// JS
+require('./js/boilerplate');
 import 'bootstrap';
 
-//CSS && SCSS
-require('./scss/base.scss');
-
+// CSS && SCSS
+require('./scss/boilerplate.scss');
