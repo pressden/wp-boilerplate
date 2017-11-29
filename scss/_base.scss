@@ -86,8 +86,8 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
-	padding: 10px 0;
-	width: 320px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .site-title {
@@ -159,10 +159,6 @@ Site Navigation
 	color: #666;
 }
 
-.genesis-nav-menu > .menu-item > a {
-	text-transform: uppercase;
-}
-
 .genesis-nav-menu .sub-menu {
 	margin-left: -1px;
 	padding-left: 0;
@@ -216,7 +212,6 @@ Site Navigation
 	letter-spacing: 4px;
 	list-style-type: none;
 	padding: 20px 0;
-	text-transform: uppercase;
 }
 
 .genesis-nav-menu > .right > a {
