@@ -35,6 +35,15 @@ add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'g
 
 // GENESIS SETUP
 
+// remove structural wraps
+add_theme_support( 'genesis-structural-wraps', array( 'header', 'site-inner', 'footer' ) );
+
+// add Accessibility support
+add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
+
+// add viewport meta tag for mobile browsers
+add_theme_support( 'genesis-responsive-viewport' );
+
 // lower the priority of genesis inpost meta boxes
 add_action( 'after_setup_theme', 'childtheme_genesis_inpost_meta_boxes' );
 if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
