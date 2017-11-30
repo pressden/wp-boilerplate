@@ -2,20 +2,32 @@
 // CUSTOMIZER
 
 //* Add support for custom header
-add_theme_support( 'custom-header', array(
-	'default-text-color'     => '000000',
-	'header-selector'        => '.site-title a',
-	'header-text'            => false,
-	'height'                 => 120,
-	'width'                  => 320,
-) );
+add_action( 'after_setup_theme', 'childtheme_add_custom_header_support' );
+if( !function_exists( 'childtheme_add_custom_header_support' ) ) {
+	function childtheme_add_custom_header_support() {
+		add_theme_support( 'custom-header', array(
+			'default-text-color'     => '000000',
+			'header-selector'        => '.site-title a',
+			'header-text'            => false,
+			'width'                  => 400,
+			'height'                 => 150,
+			'flex-width'             => true,
+			'flex-height'            => true,
+		) );
+	}
+}
 
 //* Add support for custom background
-add_theme_support( 'custom-background', array(
-	'default-color'        	 => 'ffffff',
-	'default-image'          => get_stylesheet_directory_uri() . '/images/bg.gif',
-	'wp-head-callback'       => 'childtheme_background_callback',
-) );
+add_action( 'after_setup_theme', 'childtheme_add_custom_background_support' );
+if( !function_exists( 'childtheme_add_custom_background_support' ) ) {
+	function childtheme_add_custom_background_support() {
+		add_theme_support( 'custom-background', array(
+			'default-color'        	 => 'ffffff',
+			'default-image'          => get_stylesheet_directory_uri() . '/images/bg.gif',
+			'wp-head-callback'       => 'childtheme_background_callback',
+		) );
+	}
+}
 
 //* Add custom background callback
 if( !function_exists( 'childtheme_background_callback' ) ) {
