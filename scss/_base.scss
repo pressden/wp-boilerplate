@@ -1,7 +1,8 @@
 /*begin base.scss */
 
-/* ## Screen Reader Text
---------------------------------------------- */
+/*
+Screen Reader Text
+---------------------------------------------------------------------------------------------------- */
 
 .screen-reader-text,
 .screen-reader-text span,
@@ -34,7 +35,9 @@
 .more-link {
     position: relative;
 }
-/* # Skip Links
+
+/*
+Skip Links
 ---------------------------------------------------------------------------------------------------- */
 
 .genesis-skip-link {
@@ -53,34 +56,44 @@
 	outline: #ccc solid 1px;
 }
 
+/*
+Fonts
+---------------------------------------------------------------------------------------------------- */
 
-/* Objects
---------------------------------------------- */
-
-embed,
-iframe,
-img,
-object,
-video,
-.wp-caption {
-	max-width: 100%;
+body {
+	font-family: 'Lato', sans-serif;
 }
 
-img {
-	height: auto;
+h1, h2, h3, h4, h5, h6, .site-title {
+	font-family: 'Raleway', sans-serif;
+}
+
+
+/*
+Site Structure
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	padding: 20px 0;
 }
 
 .site-inner {
-	clear: both;
-	padding-top: 50px;
+	padding: 50px 0;
+}
+
+.site-footer {
+	padding: 40px 0;
+	text-align: center;
 }
 
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
-.boilerplate .site-header-banner {
-	height: 200px;
+
+.site-header-banner {
+	min-height: 300px;
 }
+
 
 /* Title Area
 --------------------------------------------- */
@@ -91,23 +104,13 @@ Site Header
 }
 
 .site-title {
-	font-family: 'Raleway', sans-serif;
 	font-size: 36px;
-	font-weight: 400;
-	line-height: 1;
 	margin-bottom: 0;
 }
 
 .site-title a,
 .site-title a:hover {
 	color: #333;
-}
-
-.site-description {
-	display: block;
-	height: 0;
-	margin-bottom: 0;
-	text-indent: -9999px;
 }
 
 .header-full-width.header-image .site-title a {
@@ -125,134 +128,12 @@ Site Header
 Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
-.genesis-nav-menu {
-	clear: both;
-	color: #666;
-	font-family: 'Lato', sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-	width: 100%;
-}
-
-.genesis-nav-menu .menu-item {
-	display: inline-block;
-	margin: 0;
-	text-align: left;
-}
-
-.genesis-nav-menu a {
-	color: #666;
-	display: block;
-	font-size: 16px;
-	letter-spacing: 4px;
-	padding: 20px;
-	position: relative;
-}
-
-.genesis-nav-menu a:hover,
-.genesis-nav-menu .current-menu-item > a,
-.genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: #e5554e;
-}
-
-.genesis-nav-menu .sub-menu .current-menu-item > a {
-	color: #666;
-}
-
-.genesis-nav-menu .sub-menu {
-	margin-left: -1px;
-	padding-left: 0;
-	left: -9999px;
-	opacity: 0;
-	position: absolute;
-	-webkit-transition: opacity .4s ease-in-out;
-	-moz-transition:    opacity .4s ease-in-out;
-	-ms-transition:     opacity .4s ease-in-out;
-	-o-transition:      opacity .4s ease-in-out;
-	transition:         opacity .4s ease-in-out;
-	width: 200px;
-	z-index: 99;
-}
-
-.genesis-nav-menu .sub-menu a {
-	background-color: #fff;
-	border: 1px solid #eee;
-	border-top: none;
-	font-size: 14px;
-	letter-spacing: 2px;
-	padding: 16px 20px;
-	position: relative;
-	width: 200px;
-}
-
-.genesis-nav-menu .sub-menu .sub-menu {
-	margin: -54px 0 0 199px;
-}
-
-.genesis-nav-menu .menu-item:hover {
-	position: static;
-}
-
-.genesis-nav-menu .menu-item:hover > .sub-menu {
-	left: auto;
-	opacity: 1;
-}
-
-.genesis-nav-menu > .first > a {
-	padding-left: 0;
-}
-
-.genesis-nav-menu > .last > a {
-	padding-right: 0;
-}
-
-.genesis-nav-menu > .right {
-	display: inline-block;
-	float: right;
-	letter-spacing: 4px;
-	list-style-type: none;
-	padding: 20px 0;
-}
-
-.genesis-nav-menu > .right > a {
-	display: inline;
-	padding: 0;
-}
-
-.genesis-nav-menu > .rss > a {
-	margin-left: 40px;
-}
-
-.genesis-nav-menu > .search {
-	padding: 4px 0 0;
-}
-
-
-/* Primary Navigation
---------------------------------------------- */
-
 .nav-primary {
 	background-color: #f5f5f5;
 }
 
-/*
-Site Footer
----------------------------------------------------------------------------------------------------- */
-
-.site-footer {
-	font-size: 16px;
-	padding: 40px 0;
-	text-align: center;
-}
-
-.site-footer a {
-	color: #666;
-}
-
-.site-footer a:hover {
-	color: #e5554e;
-}
-
-.site-footer p {
-	margin-bottom: 0;
+.navbar-expand-md .navbar-nav .nav-link {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	
 }

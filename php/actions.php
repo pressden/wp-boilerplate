@@ -22,13 +22,42 @@ if( !function_exists( 'childtheme_enqueue_scripts' ) ) {
 	}
 }
 
+//* Move secondary menu above the header
+add_action( 'after_setup_theme', 'childtheme_move_subnav' );
+if( !function_exists( 'childtheme_move_subnav' ) ) {
+	function childtheme_move_subnav() {
+		remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+		add_action( 'genesis_header_right', 'genesis_do_subnav', 5 );
+	}
+}
+
 //* Add custom header banner after header
 add_action( 'genesis_after_header', 'childtheme_header_banner' );
 if( !function_exists( 'childtheme_header_banner' ) ) {
 	function childtheme_header_banner() {
-		if ( !get_background_image() )
+		if ( !get_background_image() ) {
 			return;
+		}
 
 		echo '<div class="site-header-banner"></div>';
+	}
+}
+
+// Lower the priority of genesis inpost meta boxes
+add_action( 'after_setup_theme', 'childtheme_genesis_inpost_meta_boxes' );
+if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
+	function childtheme_genesis_inpost_meta_boxes() {
+	  // exit early if genesis isn't installed
+	  if( ! function_exists( 'genesis' ) ) {
+	    return;
+	  }
+
+	  // unhook the genesis meta box actions
+	  remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
+	  remove_action( 'admin_menu', 'genesis_add_inpost_layout_box' );
+
+	  // hook the genesis meta box actions
+	  add_action( 'admin_head', 'genesis_add_inpost_seo_box', 25 );
+	  add_action( 'admin_head', 'genesis_add_inpost_layout_box', 25 );
 	}
 }

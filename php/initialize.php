@@ -43,22 +43,3 @@ add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu',
 
 // add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
-
-// lower the priority of genesis inpost meta boxes
-add_action( 'after_setup_theme', 'childtheme_genesis_inpost_meta_boxes' );
-if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
-	function childtheme_genesis_inpost_meta_boxes() {
-	  // exit early if genesis isn't installed
-	  if( ! function_exists( 'genesis' ) ) {
-	    return;
-	  }
-
-	  // unhook the genesis meta box actions
-	  remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
-	  remove_action( 'admin_menu', 'genesis_add_inpost_layout_box' );
-
-	  // hook the genesis meta box actions
-	  add_action( 'admin_head', 'genesis_add_inpost_seo_box', 25 );
-	  add_action( 'admin_head', 'genesis_add_inpost_layout_box', 25 );
-	}
-}
