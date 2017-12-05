@@ -1,15 +1,21 @@
 <?php
 // ACTIONS
 
+//* Enqueue fonts
+add_action( 'wp_enqueue_scripts', 'childtheme_enqueue_fonts' );
+if( !function_exists( 'childtheme_enqueue_fonts' ) ) {
+	function childtheme_enqueue_fonts() {
+		// Google fonts
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700|Roboto:300,400,700', array(), CHILD_THEME_VERSION );
+	}
+}
+
 //* Enqueue styles
 add_action( 'wp_enqueue_scripts', 'childtheme_enqueue_styles' );
 if( !function_exists( 'childtheme_enqueue_styles' ) ) {
 	function childtheme_enqueue_styles() {
 		// main CSS file (generated via webpack from SASS files)
 		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/main.css' );
-
-		// Google fonts
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700|Raleway:400,500', array(), CHILD_THEME_VERSION );
 	}
 }
 
