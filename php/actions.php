@@ -49,6 +49,16 @@ if( !function_exists( 'childtheme_header_banner' ) ) {
 	}
 }
 
+add_action( 'genesis_entry_header', 'childtheme_entry_header_markup_open', 6 );
+function childtheme_entry_header_markup_open() {
+	echo '<div class="container">';
+}
+
+add_action( 'genesis_entry_header', 'childtheme_entry_header_markup_close', 14 );
+function childtheme_entry_header_markup_close() {
+	echo '</div>';
+}
+
 // Lower the priority of genesis inpost meta boxes
 add_action( 'after_setup_theme', 'childtheme_genesis_inpost_meta_boxes' );
 if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {

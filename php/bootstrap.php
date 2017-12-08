@@ -132,7 +132,7 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 
 				// layout containers
 				//'site-header'               => 'container',
-				//'site-inner'                => 'container',
+				'site-inner'                => 'container',
 	      //'site-footer'               => 'container',
 
 				// grid variations
@@ -199,35 +199,43 @@ if( !function_exists( 'childtheme_bootstrap_classes_layout_filter' ) ) {
 
 if( !function_exists( 'childtheme_add_bootstrap_layout_classes' ) ) {
 	function childtheme_add_bootstrap_layout_classes( $classes_to_add ) {
-	  $layout = genesis_site_layout();
+		$layout = genesis_site_layout();
 
+		/*
+		?><pre><?php echo $layout; ?></pre><?php
+		?><pre><?php print_r( $classes_to_add ); ?></pre><?php
+		die();
+		*/
+		
 	  switch ( $layout ) {
 	    case 'full-width-content':
-	      $classes_to_add['content'] = 'col-sm-12';
-	      break;
+				$classes_to_add['site-inner'] = '';
+				$classes_to_add['content-sidebar-wrap'] = '';
+				$classes_to_add['content'] = '';
+	    break;
 
 	    case 'sidebar-content':
 	      $classes_to_add['content'] = 'col-sm-9 col-sm-push-3';
 	      $classes_to_add['sidebar-primary'] = 'col-sm-3 col-sm-pull-9';
-	      break;
+	    break;
 
 	    case 'content-sidebar-sidebar':
 	      $classes_to_add['content'] = 'col-sm-6';
 	      $classes_to_add['sidebar-primary'] = 'col-sm-3';
 	      $classes_to_add['sidebar-secondary'] = 'col-sm-3';
-	      break;
+	    break;
 
 	    case 'sidebar-sidebar-content':
 	      $classes_to_add['content'] = 'col-sm-6 col-sm-push-6';
 	      $classes_to_add['sidebar-primary'] = 'col-sm-3 col-sm-pull-3';
 	      $classes_to_add['sidebar-secondary'] = 'col-sm-3 col-sm-pull-9';
-	      break;
+	    break;
 
 	    case 'sidebar-content-sidebar':
 	      $classes_to_add['content'] = 'col-sm-6 col-sm-push-3';
 	      $classes_to_add['sidebar-primary'] = 'col-sm-3 col-sm-push-3';
 	      $classes_to_add['sidebar-secondary'] = 'col-sm-3 col-sm-pull-9';
-	      break;
+	    break;
 
 	    default:
 	      // content-sidebar - no changes needed

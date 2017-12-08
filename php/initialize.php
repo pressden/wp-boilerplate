@@ -36,7 +36,7 @@ add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'g
 // GENESIS SETUP
 
 // remove structural wraps
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'site-inner', 'footer' ) );
+add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer' ) );
 
 // add Accessibility support
 add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
