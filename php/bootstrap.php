@@ -52,6 +52,34 @@ if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
 			
 			case 'secondary':
 				$args['items_wrap'] = '
+					<div class="container navbar navbar-expand-lg navbar-light px-0" id="' . $container_id . '">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#' . $menu_id . '" aria-controls="' . $menu_id . '" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+					  </button>
+
+						<div class="collapse navbar-collapse" id="' . $menu_id . '">
+							<ul id="%1$s" class="%2$s">
+				      	%3$s
+				    	</ul>
+						</div>
+				  </div>
+			  ';
+
+				$args['depth'] = 2;
+				$args['menu_class'] = 'navbar-nav';
+
+				//$options = get_option( 'childtheme_settings' );
+
+				//if( $options['childtheme_nav_walker'] ) {
+			  	// use the custom Bootstrap walker
+				  $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
+				  $args['walker'] = new wp_bootstrap_navwalker();
+				//}
+			break;
+			
+			/*
+			case 'secondary':
+				$args['items_wrap'] = '
 					<nav class="container navbar navbar-expand-sm navbar-light">
 					  <div class="collapse navbar-collapse justify-content-md-end" id="' . $container_id . '">
 					    <ul id="%1$s" class="%2$s">
@@ -70,6 +98,7 @@ if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
 				  $args['walker'] = new wp_bootstrap_navwalker();
 				//}
 			break;
+			*/
 			
 			default:
 				// nothing to do here
@@ -114,6 +143,7 @@ add_filter( 'genesis_attr_entry-content',       'childtheme_add_bootstrap_classe
 add_filter( 'genesis_attr_entry-footer',        'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_entry-pagination',    'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_site-footer',         'childtheme_add_bootstrap_classes', 11, 2 );
+add_filter( 'genesis_attr_footer-widget-area',  'childtheme_add_bootstrap_classes', 11, 2 );
 if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 	function childtheme_add_bootstrap_classes( $attr, $context ) {
 		// exit without modifications if childtheme_grid_classes are switched off
@@ -140,7 +170,7 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 
 				// header regions
 				'title-area'            		=> 'col-md-6',
-				'header-widget-area'				=> 'col-md-6 d-none d-md-block',
+				'header-widget-area'				=> 'col-md-6',
 
 				// nav regions
 	      //'nav-primary'               => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
@@ -154,6 +184,9 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 	      'entry-content'             => 'clearfix',
 	      'entry-footer'              => 'clearfix',
 	      'entry-pagination'          => 'clearfix',
+
+				// footer regions
+				'footer-widget-area'				=> 'col-lg',
 	    ),
 	    $context,
 	    $attr
@@ -200,12 +233,6 @@ if( !function_exists( 'childtheme_bootstrap_classes_layout_filter' ) ) {
 if( !function_exists( 'childtheme_add_bootstrap_layout_classes' ) ) {
 	function childtheme_add_bootstrap_layout_classes( $classes_to_add ) {
 		$layout = genesis_site_layout();
-
-		/*
-		?><pre><?php echo $layout; ?></pre><?php
-		?><pre><?php print_r( $classes_to_add ); ?></pre><?php
-		die();
-		*/
 		
 	  switch ( $layout ) {
 	    case 'full-width-content':

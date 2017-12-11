@@ -5,12 +5,15 @@
 add_action( 'after_setup_theme', 'childtheme_add_custom_header_support' );
 if( !function_exists( 'childtheme_add_custom_header_support' ) ) {
 	function childtheme_add_custom_header_support() {
+		$header_width = apply_filters( 'childtheme_header_width', '600' );
+		$header_height = apply_filters( 'childtheme_header_height', '200' );
+		
 		add_theme_support( 'custom-header', array(
 			'default-text-color'     => '000000',
 			'header-selector'        => '.site-title a',
 			'header-text'            => false,
-			'width'                  => 400,
-			'height'                 => 150,
+			'width'                  => $header_width,
+			'height'                 => $header_height,
 			'flex-width'             => true,
 			'flex-height'            => true,
 		) );
@@ -40,7 +43,7 @@ if( !function_exists( 'childtheme_background_callback' ) ) {
 			return;
 
 		echo trim( sprintf(
-			"<style type='text/css'>.custom-background .site-header-banner { background: %s %s %s %s %s; } </style>",
+			"<style type='text/css'>.custom-background .site-header { background: %s %s %s %s %s; } </style>",
 			$background ? 'url('. $background .')' : '',
 			$color ? '#'. $color : 'transparent',
 			get_theme_mod( 'background_repeat', 'repeat' ),
