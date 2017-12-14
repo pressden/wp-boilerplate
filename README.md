@@ -41,25 +41,25 @@ In the steps below `my-child-theme` is used as an example. This should be replac
 
 1. `cd wp-content/themes/my-child-theme/boilerplate`
 2. Use one of the following commands to compile the project
-..* `npm start` will compile the project once
-..* `npm run watch` will watch the project and compile any time a change is detected
+  * `npm start` will compile the project once
+  * `npm run watch` will watch the project and compile any time a change is detected
 
 ### Child Theme Structure
 
 When setting up a project for the first time several files are copied from WP-Boilerplate into your child theme folder.
 
 * `functions.php`
-..* identifies your child theme for Genesis
-..* loads WP-Boilerplate
-..* can be used to add custom functionality to your child theme
+  * identifies your child theme for Genesis
+  * loads WP-Boilerplate
+  * can be used to add custom functionality to your child theme
 * `js/theme.js`
-..* is used by webpack to manage JS dependencies
-..* can be used to add custom functionality to your child theme
+  * is used by webpack to manage JS dependencies
+  * can be used to add custom functionality to your child theme
 * `scss/_variables.scss`
-..* is used by webpack to override Bootstrap 4 variables
-..* can be used to add custom variables to your child theme
+  * is used by webpack to override Bootstrap 4 variables
+  * can be used to add custom variables to your child theme
 * `scss/theme.scss`
-..* is used by webpack to compile custom styles into your child theme
+  * is used by webpack to compile custom styles into your child theme
 
 #### Important Notes
 
