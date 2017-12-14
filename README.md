@@ -37,12 +37,9 @@ That's it! Proceed to the next section to learn more about running webpack.
 
 ### Running Webpack via NPM
 
-In the steps below `my-child-theme` is used as an example. This should be replaced with your child theme folder.
-
-1. `cd wp-content/themes/my-child-theme/boilerplate`
-2. Use one of the following commands to compile the project
-  * `npm start` will compile the project once
-  * `npm run watch` will watch the project and compile any time a change is detected
+While in the boilerplate directory (`cd wp-content/themes/my-child-theme/boilerplate`) use one of the following commands to compile the project:
+* `npm start` will compile the project once
+* `npm run watch` will watch the project and compile any time a change is detected
 
 ### Child Theme Structure
 
