@@ -77,29 +77,6 @@ if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
 				//}
 			break;
 			
-			/*
-			case 'secondary':
-				$args['items_wrap'] = '
-					<nav class="container navbar navbar-expand-sm navbar-light">
-					  <div class="collapse navbar-collapse justify-content-md-end" id="' . $container_id . '">
-					    <ul id="%1$s" class="%2$s">
-				      	%3$s
-				    	</ul>
-					  </div>
-					</nav>
-			  ';
-
-				$args['depth'] = 1;
-				$args['menu_class'] = 'navbar-nav';
-				
-				//if( $options['childtheme_nav_walker'] ) {
-			  	// use the custom Bootstrap walker
-				  $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
-				  $args['walker'] = new wp_bootstrap_navwalker();
-				//}
-			break;
-			*/
-			
 			default:
 				// nothing to do here
 			break;
