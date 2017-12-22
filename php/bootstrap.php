@@ -1,18 +1,6 @@
 <?php
 // BOOTSTRAP
 
-// load the bootstrap walker
-add_action( 'after_setup_theme', 'childtheme_include_third_party_files' );
-if( !function_exists( 'childtheme_include_third_party_files' ) ) {
-	function childtheme_include_third_party_files() {
-		//$options = get_option( 'childtheme_settings' );
-
-		//if( $options['childtheme_nav_walker'] ) {
-			require_once( get_stylesheet_directory() . '/boilerplate/php/lib/wp-bootstrap-navwalker.php' );
-		//}
-	}
-}
-
 // filter menu args to apply bootstrap walker and other settings
 add_filter( 'wp_nav_menu_args', 'childtheme_nav_menu_args_filter' );
 if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
@@ -31,7 +19,7 @@ if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
 					  </button>
 
 						<div class="collapse navbar-collapse" id="' . $menu_id . '">
-							<ul id="%1$s" class="%2$s">
+							<ul id="%1$s" class="%2$s nav nav-pills nav-fill">
 				      	%3$s
 				    	</ul>
 						</div>

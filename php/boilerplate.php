@@ -10,3 +10,4 @@ require_once( 'helpers.php' );
 require_once( 'actions.php' );
 require_once( 'filters.php' );
 require_once( 'customizer.php' );
+require_once( 'vendor.php' );
