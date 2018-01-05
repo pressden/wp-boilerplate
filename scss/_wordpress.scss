@@ -1,9 +1,39 @@
+.entry-content {
+	img {
+		@extend .my-1;
+		@extend .img-fluid;
+	}
+	
+	figure {
+		@extend .card;
+		@extend .img-fluid;
+		
+		img {
+			@extend .m-0;
+			@extend .card-img-top;
+		}
+		
+		figcaption {
+			@extend .card-body;
+			@extend .card-text;
+			@extend .small;
+			@extend .text-muted;
+		}
+	}
+	
+	table {
+		@extend .table;
+	}
+}
+
 .alignleft {
 	@extend .float-left;
+	@extend .mr-3;
 }
 
 .alignright {
 	@extend .float-right;
+	@extend .ml-3;
 }
 
 .aligncenter {
@@ -16,6 +46,7 @@
 	
 	.gallery-item {
 		@extend .col-12;
+		@extend .border-0;
 		
 		.gallery-icon {
 			img {
