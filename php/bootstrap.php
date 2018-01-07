@@ -13,8 +13,8 @@ if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
 		switch( $args['theme_location'] ) {
 			case 'primary':
 				$args['items_wrap'] = '
-					<div class="container navbar navbar-expand-md navbar-light px-0" id="' . $container_id . '">
-						<button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#' . $menu_id . '" aria-controls="' . $menu_id . '" aria-expanded="false" aria-label="Toggle navigation">
+					<div class="container navbar navbar-expand-md navbar-light" id="' . $container_id . '">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#' . $menu_id . '" aria-controls="' . $menu_id . '" aria-expanded="false" aria-label="Toggle navigation">
 					    <span class="navbar-toggler-icon"></span>
 					  </button>
 
@@ -40,7 +40,7 @@ if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
 			
 			case 'secondary':
 				$args['items_wrap'] = '
-					<div class="container navbar navbar-expand-lg navbar-light px-0" id="' . $container_id . '">
+					<div class="container navbar navbar-expand-md navbar-light" id="' . $container_id . '">
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#' . $menu_id . '" aria-controls="' . $menu_id . '" aria-expanded="false" aria-label="Toggle navigation">
 					    <span class="navbar-toggler-icon"></span>
 					  </button>
@@ -122,27 +122,24 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 	    'childtheme_bootstrap_classes',
 	    array(
 				// top level containers
-	      //'site-container'            => 'container',
 				'structural-wrap'           => 'container',
 
 				// layout containers
-				//'site-header'               => 'container',
-				'site-inner'                => 'container',
-	      //'site-footer'               => 'container',
+				'site-inner'								=> 'container',
 
 				// grid variations
 				'content-sidebar-wrap'      => 'row',
 
 				// header regions
-				'title-area'            		=> 'col-md-6',
-				'header-widget-area'				=> 'col-md-6',
+				'title-area'								=> 'col-lg-4',
+				'header-widget-area'				=> 'col-lg-8',
 
 				// nav regions
 	      //'nav-primary'               => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
 	      //'nav-secondary'             => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
 
 				// main regions
-	      'content'                   => 'col-md-9 mb-5 mb-md-0',
+	      'content'                   => 'col-md-9',
 	      'sidebar-primary'           => 'col-md-3',
 	      'archive-pagination'        => 'clearfix',
 	      'entry-header'              => 'clearfix',

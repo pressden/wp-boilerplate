@@ -75,14 +75,12 @@ h1, h2, h3, h4, h5, h6, .site-title {
 Site Structure
 ---------------------------------------------------------------------------------------------------- */
 
-.site-header,
-.site-inner,
-.site-footer {
-	padding: .75rem 0;
-}
-
 .site-footer {
 	text-align: center;
+}
+
+.layer-wrap {
+	@extend .py-4;
 }
 
 /*
@@ -94,11 +92,10 @@ Site Header
 }
 
 /* Title Area
---------------------------------------------- */
+---------------------------------------------------------------------------------------------------- */
 
 .title-area {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	@extend .py-1;
 }
 
 .site-title {
@@ -127,6 +124,15 @@ Site Header
 		a {
 			display: block;
 			text-indent: -9999px;
+			width: 345px;
+			height: 115px;
+
+			@include media-breakpoint-down(lg) {
+				margin-left: auto;
+				margin-right: auto;
+				width: 285px;
+				height: 95px;
+			}
 		}
 	}
 }
@@ -136,7 +142,28 @@ Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
 .nav-primary {
-	background-color: $gray-100;
+	@extend .bg-light;
+}
+
+.nav-secondary {
+	@include media-breakpoint-up(lg) {
+		margin-top: 1.5rem;
+		float: right;
+  }
+
+	.navbar {
+		@extend .px-0;
+	}
+
+	.navbar-light {
+		.navbar-toggler {
+			margin-right: 2rem;
+
+			@include media-breakpoint-down(md) {
+				margin: o auto;
+			}
+		}
+	}
 }
 
 /*
