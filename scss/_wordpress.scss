@@ -1,16 +1,17 @@
 .entry-content {
 	img {
-		@extend .my-1;
 		@extend .img-fluid;
 	}
 	
 	figure {
+		@extend .mb-0;
 		@extend .card;
 		@extend .img-fluid;
 		
 		img {
 			@extend .m-0;
 			@extend .card-img-top;
+			@extend .rounded
 		}
 		
 		figcaption {
@@ -41,10 +42,17 @@
 	@extend .d-block;
 }
 
+.gallery-layer {
+	@extend .mx-0;
+}
+
 .gallery {
+	padding-left: 10px;
+	padding-right: 10px;
 	@extend .row;
 	
 	.gallery-item {
+		padding: 5px !important;
 		@extend .col-12;
 		@extend .border-0;
 		
@@ -52,38 +60,34 @@
 			img {
 				@extend .mx-auto;
 				@extend .d-block;
-				@extend .img-thumbnail;
 			}
 		}
 	}
 
 	&.gallery-columns-2 {
 		.gallery-item {
-			@extend .col-md-6;
+			@extend .col-6;
 		}
 	}
 
 	&.gallery-columns-3 {
 		.gallery-item {
-			@extend .col-sm-6;
-			@extend .col-md-4;
+			@extend .col-4;
 		}
 	}
 
 	&.gallery-columns-4 {
 		.gallery-item {
-			@extend .col-sm-6;
-			@extend .col-md-4;
-			@extend .col-lg-3;
+			@extend .col-4;
+			@extend .col-md-3;
 		}
 	}
 
 	&.gallery-columns-5 {
 		@extend .d-flex;
 		.gallery-item {
-			@extend .col-6;
-			@extend .col-md-4;
-			@include media-breakpoint-up(lg) {
+			@extend .col-4;
+			@include media-breakpoint-up(md) {
 				flex: 0 0 20% !important;
 			}
 		}
@@ -91,8 +95,7 @@
 
 	&.gallery-columns-6 {
 		.gallery-item {
-			@extend .col-6;
-			@extend .col-sm-4;
+			@extend .col-4;
 			@extend .col-md-3;
 			@extend .col-lg-2;
 		}
@@ -100,9 +103,9 @@
 
 	&.gallery-columns-7 {
 		.gallery-item {
-			@extend .col-6;
-			@extend .col-sm-4;
-			@extend .col-md-3;
+			@extend .col-4;
+			@extend .col-sm-3;
+			@extend .col-md-2;
 			@include media-breakpoint-up(lg) {
 				flex: 0 0 14.2857% !important;
 			}
@@ -111,9 +114,9 @@
 
 	&.gallery-columns-8 {
 		.gallery-item {
-			@extend .col-6;
-			@extend .col-sm-4;
-			@extend .col-md-3;
+			@extend .col-4;
+			@extend .col-sm-3;
+			@extend .col-md-2;
 			@include media-breakpoint-up(lg) {
 				flex: 0 0 12.5% !important;
 			}
@@ -122,9 +125,9 @@
 
 	&.gallery-columns-9 {
 		.gallery-item {
-			@extend .col-6;
-			@extend .col-sm-4;
-			@extend .col-md-3;
+			@extend .col-4;
+			@extend .col-sm-3;
+			@extend .col-md-2;
 			@include media-breakpoint-up(lg) {
 				flex: 0 0 11.1111% !important;
 			}
