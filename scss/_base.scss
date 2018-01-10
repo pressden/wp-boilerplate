@@ -75,10 +75,6 @@ h1, h2, h3, h4, h5, h6, .site-title {
 Site Structure
 ---------------------------------------------------------------------------------------------------- */
 
-.site-footer {
-	text-align: center;
-}
-
 .layer-wrap {
 	@extend .py-4;
 }
@@ -194,6 +190,8 @@ Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-  padding-top: 2rem 0 1.5rem;
+	@extend .pt-4;
+	@extend .py-2;
+	text-align: center;
 	background-color: $gray-100;
 }

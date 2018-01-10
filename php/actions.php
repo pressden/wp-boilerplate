@@ -172,3 +172,18 @@ if( !function_exists( 'childtheme_footer_widget_areas' ) ) {
 		echo apply_filters( 'genesis_footer_widget_areas', $output, $footer_widgets );
 	}
 }
+
+// override the genesis site footer.
+add_action( 'after_setup_theme', 'childtheme_override_do_footer' );
+if( !function_exists( 'childtheme_override_do_footer' ) ) {
+	function childtheme_override_do_footer() {
+		remove_action( 'genesis_footer', 'genesis_do_footer' );
+		add_action( 'genesis_footer', 'childtheme_do_footer' );
+	}
+}
+
+if( !function_exists( 'childtheme_do_footer' ) ) {
+	function childtheme_do_footer() {
+		echo '<p>&copy; ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '</p>';
+	}
+}
