@@ -168,7 +168,6 @@ Layers
 ---------------------------------------------------------------------------------------------------- */
 .carousel {
 	@extend .mb-1;
-	background-color: $gray-200;
 	overflow: hidden;
 
 	.carousel-control-prev, .carousel-control-next {
