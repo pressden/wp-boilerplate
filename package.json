@@ -11,10 +11,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "aos": "^2.2.0",
     "bootstrap": "^4.0.0-beta.3",
-    "css-loader": "^0.28.7",
+    "css-loader": "^0.28.8",
     "jquery": "^3.2.1",
     "node-sass": "^4.7.2",
+    "parallax-js": "^3.1.0",
     "popper.js": "^1.13.0",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
