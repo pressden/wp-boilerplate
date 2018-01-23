@@ -16,8 +16,8 @@
 		@extend .img-fluid;
 		
 		img {
-			@extend .m-0;
-			@extend .card-img-top;
+			margin: 0;
+			width: 100%;
 		}
 		
 		figcaption {
