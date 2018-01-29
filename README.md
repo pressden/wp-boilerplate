@@ -62,3 +62,35 @@ When setting up a project for the first time several files are copied from WP-Bo
 
 * Files in the `boilerplate` directory should not be modified. Everything in boilerplate (PHP, JS, SASS) can be overridden in your child theme.
 * Files in the `dist` directory should not be modified directly. Webpack overwrites the `dist` folder every time the project is compiled.
+
+
+
+# Boostrap 4 Breakpoint Reference
+
+
+## Default breakpoints for bootstrap 4
+
+### xs = 0px 
+@include media-breakpoint-up (xs)
+@include media-breakpoint-down (xs)
+
+### sm = 576px 
+@include media-breakpoint-up (sm)
+@include media-breakpoint-down (sm)
+
+### md = 768px
+@include media-breakpoint-up (md) 
+@include media-breakpoint-down (md)
+
+### lg = 992px 
+@include media-breakpoint-up (lg) 
+@include media-breakpoint-down (lg)
+
+### xl = 1200px
+@include media-breakpoint-up (xl) 
+@include media-breakpoint-down (xl)
+
+### To set in between breakpoints
+@include media-breakpoint-between(md, xl) { ... }
+
+
