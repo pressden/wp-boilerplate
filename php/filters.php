@@ -12,9 +12,9 @@ if( !function_exists( 'childtheme_body_class' ) ) {
 }
 
 //* Add Bootstrap 4 compatibility via a content wrapper (if the ACF Pro Layers plugin is not activated)
-if( !function_exists( apl_content_layers_filter) ) {
+if( !function_exists( 'apl_content_layers_filter' ) ) {
 	add_filter( 'the_content', 'childtheme_content_layers_filter' );
-	function childtheme_content_layers_filter ( $content ) {
+	function childtheme_content_layers_filter( $content ) {
 	  // initialize the output variable
 		$output = '';
 		
