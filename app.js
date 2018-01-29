@@ -12,9 +12,12 @@ jQuery( document ).ready(function() {
 	
 	AOS.init();
 	
-	//initialize parallax scene
-	var scene = document.getElementById('scene');
-	var parallaxInstance = new Parallax(scene);
+	// Check if scene exists
+	  // If so, initialize scene
+	if (document.getElementById('scene')) {
+		var scene = document.getElementById('scene');
+		var parallaxInstance = new Parallax(scene);
+	}
 
 
 });
