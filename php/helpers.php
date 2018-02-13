@@ -11,11 +11,11 @@ if( !function_exists( 'childtheme_register_taxonomy' ) ) {
 		$defaults = array(
 			'applies_to' => array('post'),
 			'capabilities' => array(
-	      'manage_terms'=> 'manage_' . $codename,
-	      'edit_terms'=> 'edit_' . $codename,
-	      'delete_terms'=> 'delete_' . $codename,
-	      'assign_terms' => 'assign_' . $codename,
-	    ),
+				'manage_terms'=> 'manage_' . $codename,
+				'edit_terms'=> 'edit_' . $codename,
+				'delete_terms'=> 'delete_' . $codename,
+				'assign_terms' => 'assign_' . $codename,
+			),
 			'hierarchical' => false,
 			'rewrite' => array('slug' => $url_slug),
 		);
@@ -46,7 +46,6 @@ if( !function_exists( 'childtheme_register_taxonomy' ) ) {
 			$args
 		);
 	}
-	
 }
 
 // reguster post type with preferred defaults
@@ -110,7 +109,8 @@ if( !function_exists( 'childtheme_register_sidebar' ) ) {
 		$args['name'] = $name;
 		$args['id'] = $codename;
 
-		if(function_exists('register_sidebar'))
+		if(function_exists('register_sidebar')) {
 			register_sidebar($args);
+		}
 	}
 }

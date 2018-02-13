@@ -1,3 +1,4 @@
+/* begin wordpress.scss */
 .page,
 .single {
 	.entry-header {
@@ -9,17 +10,17 @@
 	img {
 		@extend .img-fluid;
 	}
-	
+
 	figure {
 		@extend .mb-0;
 		@extend .card;
 		@extend .img-fluid;
-		
+
 		img {
 			margin: 0;
 			width: 100%;
 		}
-		
+
 		figcaption {
 			@extend .card-body;
 			@extend .card-text;
@@ -27,7 +28,7 @@
 			@extend .text-muted;
 		}
 	}
-	
+
 	table {
 		@extend .table;
 	}
@@ -56,12 +57,12 @@
 	padding-left: 10px;
 	padding-right: 10px;
 	@extend .row;
-	
+
 	.gallery-item {
 		padding: 5px !important;
 		@extend .col-12;
 		@extend .border-0;
-		
+
 		.gallery-icon {
 			img {
 				@extend .mx-auto;
