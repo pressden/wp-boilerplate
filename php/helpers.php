@@ -3,19 +3,8 @@
 
 // register taxonomy with preferred defaults
 if( !function_exists( 'childtheme_register_taxonomy' ) ) {
-	function childtheme_register_taxonomy( $codename, $singular, $plural, $url_slug = null, $args = array() )
+	function childtheme_register_taxonomy( $codename, $singular, $plural, $args = array() )
 	{
-		// define a useful url_slug since rewriting is encouraged
-		$url_slug = ( $url_slug ) ? $url_slug : $codename;
-
-		$defaults = array(
-			'applies_to' => array( 'post' ),
-			'hierarchical' => false,
-			'rewrite' => array( 'slug' => $url_slug ),
-		);
-
-		$args = wp_parse_args( $args, $defaults );
-
 		$labels = array(
 			'name' => $plural,
 			'singular_name' => $singular,
@@ -31,24 +20,23 @@ if( !function_exists( 'childtheme_register_taxonomy' ) ) {
 			'choose_from_most_used' => 'Choose from the most used ' . strtolower( $plural ),
 			'menu_name' => $plural,
 		);
-
-		$args['labels'] = $labels;
-
-		register_taxonomy(
-			$codename,
-			$args['applies_to'],
-			$args
+		
+		$defaults = array(
+			'labels' => $labels,
+			'applies_to' => array( 'post' ),
+			'hierarchical' => false,
 		);
+
+		$args = wp_parse_args( $args, $defaults );
+
+		register_taxonomy( $codename, $args['applies_to'], $args );
 	}
 }
 
 // reguster post type with preferred defaults
 if( !function_exists( 'childtheme_register_post_type' ) ) {
-	function childtheme_register_post_type( $codename, $singular, $plural, $url_slug = null, $args = array() )
+	function childtheme_register_post_type( $codename, $singular, $plural, $args = array() )
 	{
-		// define a useful url_slug since rewriting is encouraged
-		$url_slug = ( $url_slug ) ? $url_slug : $codename;
-
 		$labels = array(
 			'name' => $plural,
 			'singular_name' => $singular,
