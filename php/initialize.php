@@ -59,7 +59,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_action( 'init', 'childtheme_initialize_contacts' );
 if( !function_exists( 'childtheme_initialize_contacts' ) ) {
 	function childtheme_initialize_contacts() {
-		childtheme_register_taxonomy( 'contact-groups', 'Contact Group', 'Contact Groups' );
-		childtheme_register_post_type( 'contact', 'Contact', 'Contacts', array( 'taxonomies' => array( 'contact-groups' ) ) );
+		childtheme_register_taxonomy( 'contact-groups', 'Contact Group', 'Contact Groups', array( 'applies_to' => 'contact' ) );
+		childtheme_register_post_type( 'contact', 'Contact', 'Contacts' );
 	}
 }
