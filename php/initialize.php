@@ -51,3 +51,15 @@ add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu',
 
 // add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
+
+
+// CUSTOM POST TYPE SETUP
+
+// initialize the contact post type (useful for staff directories / committees / boards / etc.)
+add_action( 'init', 'childtheme_initialize_contacts' );
+if( !function_exists( 'childtheme_initialize_contacts' ) ) {
+	function childtheme_initialize_contacts() {
+		childtheme_register_taxonomy( 'contact-groups', 'Contact Group', 'Contact Groups' );
+		childtheme_register_post_type( 'contact', 'Contact', 'Contacts', array( 'taxonomies' => array( 'contact-groups' ) ) );
+	}
+}
