@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -7,7 +8,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: __dirname + "./../dist"
+    path: __dirname + "./../dist",
   },
   module: {
     loaders: [
@@ -50,12 +51,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract(
-          {
+        use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          }
-        )
+            use: [
+                { loader: 'css-loader', options: { minimize: true } }
+            ]
+        })
       }
     ]
   },
@@ -68,6 +69,7 @@ module.exports = {
       Popper: ['popper.js', 'default'],
       Util: "exports-loader?Util!bootstrap/js/dist/util",
       Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
-    })
+    }),
+    new UglifyJsPlugin(),
   ]
 }
