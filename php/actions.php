@@ -85,9 +85,9 @@ add_action( 'after_setup_theme', 'childtheme_move_after_entry_widget' );
 if( !function_exists( 'childtheme_move_after_entry_widget' ) ) {
 	function childtheme_move_after_entry_widget() {
 		remove_action( 'genesis_after_entry', 'genesis_after_entry_widget_area' );
-		add_action( 'genesis_entry_footer', 'childtheme_container_markup_open', 11 );
-		add_action( 'genesis_entry_footer', 'genesis_after_entry_widget_area', 12 );
-		add_action( 'genesis_entry_footer', 'childtheme_container_markup_close', 13 );
+		add_action( 'genesis_entry_footer', 'childtheme_container_markup_open', 6 );
+		add_action( 'genesis_entry_footer', 'genesis_after_entry_widget_area' );
+		add_action( 'genesis_entry_footer', 'childtheme_container_markup_close', 14 );
 		add_post_type_support( 'page', 'genesis-after-entry-widget-area' );
 	}
 }
