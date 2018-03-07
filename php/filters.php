@@ -40,3 +40,15 @@ if( !function_exists( 'apl_content_layers_filter' ) ) {
 	  return $output;
 	}
 }
+
+//* Suppress the edit link on pages in favor of the admin bar
+add_filter( 'genesis_edit_post_link', 'childtheme_edit_post_link' );
+if( !function_exists( 'childtheme_edit_post_link' ) ) {
+	function childtheme_edit_post_link( $edit_link ) {
+		if( !$edit_link || ( is_singular() && is_page() ) ) {
+			return false;
+		}
+
+		return true;
+	}
+}
