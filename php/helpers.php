@@ -24,7 +24,7 @@ if( !function_exists( 'childtheme_register_taxonomy' ) ) {
 		$defaults = array(
 			'labels' => $labels,
 			'applies_to' => array( 'post' ),
-			'hierarchical' => false,
+			'hierarchical' => true,
 		);
 
 		$args = wp_parse_args( $args, $defaults );
