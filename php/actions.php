@@ -45,22 +45,6 @@ if( !function_exists( 'childtheme_header_banner' ) ) {
 	}
 }
 
-// add open container markup
-add_action( 'genesis_entry_header', 'childtheme_container_markup_open', 6 );
-if( !function_exists( 'childtheme_container_markup_open' ) ) {
-	function childtheme_container_markup_open() {
-		echo '<div class="container">';
-	}
-}
-
-// add close container markup
-add_action( 'genesis_entry_header', 'childtheme_container_markup_close', 14 );
-if( !function_exists( 'childtheme_container_markup_close' ) ) {
-	function childtheme_container_markup_close() {
-		echo '</div>';
-	}
-}
-
 // lower the priority of genesis inpost meta boxes
 add_action( 'after_setup_theme', 'childtheme_genesis_inpost_meta_boxes' );
 if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
@@ -79,6 +63,10 @@ if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
 	  add_action( 'admin_head', 'genesis_add_inpost_layout_box', 25 );
 	}
 }
+
+// ensure all page sections have the proper containers
+add_action( 'genesis_entry_header', 'childtheme_container_markup_open', 6 );
+add_action( 'genesis_entry_header', 'childtheme_container_markup_close', 14 );
 
 // move the after entry widget and ensure the functionality is added to pages
 add_action( 'after_setup_theme', 'childtheme_move_after_entry_widget' );

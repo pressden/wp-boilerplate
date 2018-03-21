@@ -88,3 +88,17 @@ if( !function_exists( 'childtheme_register_sidebar' ) ) {
 		}
 	}
 }
+
+// add open container markup
+if( !function_exists( 'childtheme_container_markup_open' ) ) {
+	function childtheme_container_markup_open() {
+		echo '<div class="container">';
+	}
+}
+
+// add close container markup
+if( !function_exists( 'childtheme_container_markup_close' ) ) {
+	function childtheme_container_markup_close() {
+		echo '</div>';
+	}
+}
