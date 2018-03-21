@@ -1,7 +1,7 @@
 <?php
 // ACTIONS
 
-//* Enqueue fonts
+// enqueue fonts
 add_action( 'wp_enqueue_scripts', 'childtheme_enqueue_fonts' );
 if( !function_exists( 'childtheme_enqueue_fonts' ) ) {
 	function childtheme_enqueue_fonts() {
@@ -10,7 +10,7 @@ if( !function_exists( 'childtheme_enqueue_fonts' ) ) {
 	}
 }
 
-//* Enqueue styles
+// enqueue styles
 add_action( 'wp_enqueue_scripts', 'childtheme_enqueue_styles' );
 if( !function_exists( 'childtheme_enqueue_styles' ) ) {
 	function childtheme_enqueue_styles() {
@@ -19,7 +19,7 @@ if( !function_exists( 'childtheme_enqueue_styles' ) ) {
 	}
 }
 
-//* Enqueue scripts
+// enqueue scripts
 add_action( 'wp_enqueue_scripts', 'childtheme_enqueue_scripts' );
 if( !function_exists( 'childtheme_enqueue_scripts' ) ) {
 	function childtheme_enqueue_scripts() {
@@ -28,7 +28,7 @@ if( !function_exists( 'childtheme_enqueue_scripts' ) ) {
 	}
 }
 
-//* Move secondary menu above the header
+// move secondary menu above the header
 add_action( 'after_setup_theme', 'childtheme_move_subnav' );
 if( !function_exists( 'childtheme_move_subnav' ) ) {
 	function childtheme_move_subnav() {
@@ -37,7 +37,7 @@ if( !function_exists( 'childtheme_move_subnav' ) ) {
 	}
 }
 
-//* Add custom header banner after header
+// add custom header banner after header
 add_action( 'genesis_after_header', 'childtheme_header_banner' );
 if( !function_exists( 'childtheme_header_banner' ) ) {
 	function childtheme_header_banner() {
@@ -45,7 +45,7 @@ if( !function_exists( 'childtheme_header_banner' ) ) {
 	}
 }
 
-//* Add open container markup
+// add open container markup
 add_action( 'genesis_entry_header', 'childtheme_container_markup_open', 6 );
 if( !function_exists( 'childtheme_container_markup_open' ) ) {
 	function childtheme_container_markup_open() {
@@ -53,7 +53,7 @@ if( !function_exists( 'childtheme_container_markup_open' ) ) {
 	}
 }
 
-//* Add close container markup
+// add close container markup
 add_action( 'genesis_entry_header', 'childtheme_container_markup_close', 14 );
 if( !function_exists( 'childtheme_container_markup_close' ) ) {
 	function childtheme_container_markup_close() {
@@ -61,7 +61,7 @@ if( !function_exists( 'childtheme_container_markup_close' ) ) {
 	}
 }
 
-// Lower the priority of genesis inpost meta boxes
+// lower the priority of genesis inpost meta boxes
 add_action( 'after_setup_theme', 'childtheme_genesis_inpost_meta_boxes' );
 if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
 	function childtheme_genesis_inpost_meta_boxes() {
