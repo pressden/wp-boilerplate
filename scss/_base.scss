@@ -75,9 +75,16 @@ h1, h2, h3, h4, h5, h6, .site-title {
 Site Structure
 ---------------------------------------------------------------------------------------------------- */
 
+.home {
+	.layer-wrap {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+}
+
 .layer-wrap {
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 }
 
 /*
