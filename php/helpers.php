@@ -119,7 +119,7 @@ if( !function_exists( 'childtheme_post_markup_open' ) ) {
 }
 
 // add loop end markup
-if( !function_exists( 'childtheme_past_markup_close' ) ) {
+if( !function_exists( 'childtheme_post_markup_close' ) ) {
 	function childtheme_post_markup_close() {
 		?>
 
