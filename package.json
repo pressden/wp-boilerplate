@@ -11,7 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "ajv": "^6.4.0",
+    "ajv": "^6.5.0",
     "aos": "^2.2.0",
     "bootstrap": "^4.1.1",
     "css-loader": "^0.28.11",
