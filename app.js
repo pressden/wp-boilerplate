@@ -1,5 +1,6 @@
 // JS
 require('./js/boilerplate');
+
 import 'bootstrap';
 import AOS from 'aos';
 import Parallax from 'parallax-js';
