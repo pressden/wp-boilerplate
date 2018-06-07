@@ -24,7 +24,7 @@ add_action( 'wp_enqueue_scripts', 'childtheme_enqueue_scripts' );
 if( !function_exists( 'childtheme_enqueue_scripts' ) ) {
 	function childtheme_enqueue_scripts() {
 		// main JS file (generated via webpack)
-		wp_enqueue_script( 'bundle', get_stylesheet_directory_uri() . '/dist/main.js', null, 1, false );
+		wp_enqueue_script( 'bundle', get_stylesheet_directory_uri() . '/dist/main.js', array( 'jquery' ), 1, false );
 	}
 }
 
