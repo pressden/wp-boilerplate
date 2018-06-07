@@ -3,6 +3,9 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+	externals: {
+		jquery: 'jQuery',
+	},
   entry: {
     main: './app.js',
   },
