@@ -79,6 +79,35 @@ if( !function_exists( 'childtheme_bootstrap_close_row' ) ) {
 	}
 }
 
+//* add bootstrap markup around entry headers
+add_action( 'genesis_entry_header', 'childtheme_entry_header_markup_open', 10 );
+if( !function_exists( 'childtheme_entry_header_markup_open' ) ) {
+	function childtheme_entry_header_markup_open() {
+		?>
+
+		<div class="entry-header-container container">
+			<div class="entry-header-layer layer row">
+				<?php // @TODO: Add .col to post_classes instead of including it here ?>
+				<div class="col">
+
+		<?php
+	}
+}
+
+add_action( 'genesis_header', 'childtheme_entry_header_markup_close', 11 );
+if( !function_exists( 'childtheme_entry_header_markup_close' ) ) {
+	function childtheme_entry_header_markup_close() {
+		?>
+
+				</div>
+				<?php // @TODO: Add .col to post_classes instead of including it here ?>
+			</div>
+		</div>
+
+		<?php
+	}
+}
+
 // add bootstrap classes throughout the layout
 add_filter( 'genesis_attr_site-container',              'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_structural-wrap',             'childtheme_add_bootstrap_classes', 11, 2 );
