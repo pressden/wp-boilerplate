@@ -79,32 +79,69 @@ if( !function_exists( 'childtheme_bootstrap_close_row' ) ) {
 	}
 }
 
-//* add bootstrap markup around entry headers
+//* add bootstrap markup around entry header
 add_action( 'genesis_entry_header', 'childtheme_entry_header_markup_open', 10 );
 if( !function_exists( 'childtheme_entry_header_markup_open' ) ) {
 	function childtheme_entry_header_markup_open() {
-		?>
+		if( is_singular() ) {
+			?>
 
-		<div class="entry-header-container container">
-			<div class="entry-header-layer layer row">
-				<?php // @TODO: Add .col to post_classes instead of including it here ?>
-				<div class="col">
+			<div class="entry-header-container container">
+				<div class="entry-header-layer layer row">
+					<?php // @TODO: Add .col to post_classes instead of including it here ?>
+					<div class="col">
 
-		<?php
+			<?php
+		}
 	}
 }
 
-add_action( 'genesis_header', 'childtheme_entry_header_markup_close', 11 );
+add_action( 'genesis_entry_header', 'childtheme_entry_header_markup_close', 13 );
 if( !function_exists( 'childtheme_entry_header_markup_close' ) ) {
 	function childtheme_entry_header_markup_close() {
-		?>
+		if( is_singular() ) {
+			?>
 
 				</div>
 				<?php // @TODO: Add .col to post_classes instead of including it here ?>
 			</div>
 		</div>
 
-		<?php
+			<?php
+		}
+	}
+}
+
+//* add bootstrap markup around entry footer
+add_action( 'genesis_entry_footer', 'childtheme_entry_footer_markup_open', 7 );
+if( !function_exists( 'childtheme_entry_footer_markup_open' ) ) {
+	function childtheme_entry_footer_markup_open() {
+		if( is_singular() ) {
+			?>
+
+			<div class="entry-footer-container container">
+				<div class="entry-footer-layer layer row">
+					<?php // @TODO: Add .col to post_classes instead of including it here ?>
+					<div class="col">
+
+			<?php
+		}
+	}
+}
+
+add_action( 'genesis_entry_footer', 'childtheme_entry_footer_markup_close', 13 );
+if( !function_exists( 'childtheme_entry_footer_markup_close' ) ) {
+	function childtheme_entry_footer_markup_close() {
+		if( is_singular() ) {
+			?>
+
+					</div>
+					<?php // @TODO: Add .col to post_classes instead of including it here ?>
+				</div>
+			</div>
+
+			<?php
+		}
 	}
 }
 
