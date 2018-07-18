@@ -52,6 +52,9 @@ add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu',
 // add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
+// add excerpts to pages
+add_post_type_support( 'page', 'excerpt' );
+
 
 // CUSTOM POST TYPE SETUP
 
