@@ -141,3 +141,11 @@
 		}
 	}
 }
+
+.widget {
+	&.widget_nav_menu {
+		.menu {
+			list-style-type: none;
+		}
+	}
+}
