@@ -28,7 +28,7 @@ if( !function_exists( 'childtheme_enqueue_scripts' ) ) {
 	}
 }
 
-// move secondary menu above the header
+// move secondary menu to header right
 add_action( 'after_setup_theme', 'childtheme_move_subnav' );
 if( !function_exists( 'childtheme_move_subnav' ) ) {
 	function childtheme_move_subnav() {
