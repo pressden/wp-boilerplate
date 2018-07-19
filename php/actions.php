@@ -28,6 +28,23 @@ if( !function_exists( 'childtheme_enqueue_scripts' ) ) {
 	}
 }
 
+/*
+// setup custom functionality for the childtheme
+add_action( 'after_setup_theme', 'childtheme_setup_theme' );
+function childtheme_setup_theme() {
+	remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_action( 'genesis_before_header', 'genesis_do_nav' );
+}
+*/
+
+// add the utility bar
+add_action( 'genesis_before_header', 'childtheme_add_utility_bar' );
+if( !function_exists( 'childtheme_add_utility_bar' ) ) {
+	function childtheme_add_utility_bar() {
+		childtheme_utility_widget_areas();
+	}
+}
+
 // move secondary menu to header right
 add_action( 'after_setup_theme', 'childtheme_move_subnav' );
 if( !function_exists( 'childtheme_move_subnav' ) ) {
@@ -97,6 +114,82 @@ if( !function_exists( 'childtheme_move_after_entry_widget' ) ) {
 		add_action( 'genesis_entry_footer', 'genesis_after_entry_widget_area' );
 		//add_action( 'genesis_entry_footer', 'childtheme_container_markup_close', 14 );
 		add_post_type_support( 'page', 'genesis-after-entry-widget-area' );
+	}
+}
+
+// add widget areas tot he utility bar
+add_action( 'after_setup_theme', 'childtheme_register_utility_widget_areas' );
+if( !function_exists( 'childtheme_register_utility_widget_areas' ) ) {
+	function childtheme_register_utility_widget_areas() {
+		$counter = 1;
+
+		while ( $counter <= 3 ) {
+			genesis_register_widget_area(
+				array(
+					'id'               => sprintf( 'utility-%d', $counter ),
+					'name'             => sprintf( 'Utility %d', $counter ),
+					'description'      => sprintf( 'Utility %d widget area.', $counter ),
+				)
+			);
+
+			$counter++;
+		}
+	}
+}
+
+if( !function_exists( 'childtheme_utility_widget_areas' ) ) {
+	function childtheme_utility_widget_areas() {
+
+		$inside  = '';
+		$output  = '';
+	 	$counter = 1;
+		$utility_widgets = 3;
+
+		while ( $counter <= $utility_widgets ) {
+
+			// Darn you, WordPress! Gotta output buffer.
+			ob_start();
+			dynamic_sidebar( 'utility-' . $counter );
+			$widgets = ob_get_clean();
+
+			if ( $widgets ) {
+				$inside .= genesis_markup(
+					array(
+						'open'    => '<div %s>',
+						'close'   => '</div>',
+						'context' => 'utility-widget-area',
+						'content' => $widgets,
+						'echo'    => false,
+						'params'  => array(
+							'column' => $counter,
+							'count'  => $utility_widgets,
+						)
+					)
+				);
+			}
+
+			$counter++;
+
+		}
+
+		if ( $inside ) {
+			$_inside = genesis_structural_wrap( 'utility-widgets', 'open', 0 );
+			$_inside .= '<div class="row">';
+			$_inside .= $inside;
+			$_inside .= '</div>';
+			$_inside .= genesis_structural_wrap( 'utility-widgets', 'close', 0 );
+
+			$output .= genesis_markup( array(
+				'open'    => '<section %s>' . genesis_sidebar_title( 'Utility' ),
+				'close'   => '</section>',
+				'content' => $_inside,
+				'context' => 'utility-widgets',
+				'echo'    => false,
+			) );
+
+		}
+
+		echo apply_filters( 'genesis_utility_widget_areas', $output, $utility_widgets );
 	}
 }
 

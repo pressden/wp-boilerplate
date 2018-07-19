@@ -44,7 +44,7 @@ add_theme_support( 'genesis-after-entry-widget-area' );
 // GENESIS SETUP
 
 // remove structural wraps
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer', 'footer-widgets' ) );
+add_theme_support( 'genesis-structural-wraps', array( 'utility-widgets', 'header', 'footer', 'footer-widgets' ) );
 
 // add accessibility support
 add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
