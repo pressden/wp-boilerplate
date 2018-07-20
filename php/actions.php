@@ -117,7 +117,7 @@ if( !function_exists( 'childtheme_move_after_entry_widget' ) ) {
 	}
 }
 
-// add widget areas tot he utility bar
+// add widget areas to the utility bar
 add_action( 'after_setup_theme', 'childtheme_register_utility_widget_areas' );
 if( !function_exists( 'childtheme_register_utility_widget_areas' ) ) {
 	function childtheme_register_utility_widget_areas() {

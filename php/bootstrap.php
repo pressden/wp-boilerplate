@@ -64,7 +64,7 @@ if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
 	}
 }
 
-//* add bootstrap rows wherever they are missing
+// add bootstrap rows wherever they are missing
 add_action( 'genesis_header', 'childtheme_bootstrap_open_row', 10 );
 if( !function_exists( 'childtheme_bootstrap_open_row' ) ) {
 	function childtheme_bootstrap_open_row() {
@@ -79,7 +79,7 @@ if( !function_exists( 'childtheme_bootstrap_close_row' ) ) {
 	}
 }
 
-//* add bootstrap markup around entry header
+// add bootstrap markup around entry header
 add_action( 'genesis_entry_header', 'childtheme_entry_header_markup_open', 10 );
 if( !function_exists( 'childtheme_entry_header_markup_open' ) ) {
 	function childtheme_entry_header_markup_open() {
@@ -112,7 +112,7 @@ if( !function_exists( 'childtheme_entry_header_markup_close' ) ) {
 	}
 }
 
-//* add bootstrap markup around entry footer
+// add bootstrap markup around entry footer
 add_action( 'genesis_entry_footer', 'childtheme_entry_footer_markup_open', 7 );
 if( !function_exists( 'childtheme_entry_footer_markup_open' ) ) {
 	function childtheme_entry_footer_markup_open() {
@@ -160,6 +160,7 @@ add_filter( 'genesis_attr_content',                     'childtheme_add_bootstra
 add_filter( 'genesis_attr_sidebar-primary',             'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_sidebar-secondary',           'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_archive-pagination',          'childtheme_add_bootstrap_classes', 11, 2 );
+add_filter( 'genesis_attr_search-form',                 'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_entry-header',                'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_blog-template-description',   'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_posts-page-description',      'childtheme_add_bootstrap_classes', 11, 2 );
@@ -198,6 +199,9 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 				// nav regions
 				//'nav-primary'               => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
 				//'nav-secondary'             => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
+				
+				// search form
+				'search-form'									=> 'form-inline',
 
 				// main regions
 				'content'                     => 'col-md-9',
