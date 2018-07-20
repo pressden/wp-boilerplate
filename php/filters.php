@@ -76,8 +76,8 @@ if( !function_exists( 'childtheme_search_form' ) ) {
 		$form.= '
 			<meta itemprop="target" content="' . home_url( '/?s={s}' ) . '"/>
 			<label class="search-form-label screen-reader-text" for="' . esc_attr( $form_id ) . '">' . esc_html( $label ) . '</label>
-			<input itemprop="query-input" type="search" name="s" id="' . esc_attr( $form_id ) . '" class="form-control form-control-sm mr-sm-2" ' . $value_or_placeholder . '="' . esc_attr( $search_text ) . '" />
-			<button type="submit" class="btn btn-sm btn-outline-success my-2 my-sm-0" />' . esc_attr( $button_text ) . '</button>
+			<input itemprop="query-input" type="search" name="s" id="' . esc_attr( $form_id ) . '" class="form-control form-control-sm mr-2" ' . $value_or_placeholder . '="' . esc_attr( $search_text ) . '" />
+			<button type="submit" class="btn btn-sm btn-primary" />' . esc_attr( $button_text ) . '</button>
 		</form>';
 
 		return apply_filters( 'genesis_search_form', $form, $search_text, $button_text, $label );
