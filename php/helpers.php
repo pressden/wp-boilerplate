@@ -55,7 +55,7 @@ if( !function_exists( 'childtheme_register_post_type' ) ) {
 			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats' ),
 			'public' => true,
 			'menu_position' => 20,
-			'rewrite' => array( 'slug' => $url_slug ),
+			'rewrite' => array( 'slug' => $codename ),
 			'has_archive' => true,
 		);
 
