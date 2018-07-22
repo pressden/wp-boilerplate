@@ -66,3 +66,12 @@ if( !function_exists( 'childtheme_initialize_contacts' ) ) {
 		childtheme_register_post_type( 'contact', 'Contact', 'Contacts', array( 'rewrite' => array( 'slug' => 'contact-directory' ) ) );
 	}
 }
+
+// initialize the faq post type
+add_action( 'init', 'childtheme_initialize_faqs' );
+if( !function_exists( 'childtheme_initialize_faqs' ) ) {
+	function childtheme_initialize_faqs() {
+		childtheme_register_taxonomy( 'faq-category', 'FAQ Category', 'FAQ Categories', array( 'applies_to' => 'faq' ) );
+		childtheme_register_post_type( 'faq', 'FAQ', 'FAQs' );
+	}
+}

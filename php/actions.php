@@ -1,6 +1,19 @@
 <?php
 // ACTIONS
 
+// modify the faq archive main query
+add_filter( 'pre_get_posts', 'childtheme_modify_faq_archive_query' );
+if( !function_exists( 'childtheme_modify_faq_archive_query' ) ) {
+	function childtheme_modify_faq_archive_query( $query ) {
+		if ( $query->is_main_query() && $query->is_post_type_archive( 'faq' ) ) {
+			// Remove the `posts_per_page` limit so all FAQ's load on a single page
+			$query->query_vars['posts_per_page'] = -1;
+		}
+
+		return $query;
+	}
+}
+
 // enqueue fonts
 add_action( 'wp_enqueue_scripts', 'childtheme_enqueue_fonts' );
 if( !function_exists( 'childtheme_enqueue_fonts' ) ) {
