@@ -86,10 +86,11 @@ if( !function_exists( 'childtheme_entry_header_markup_open' ) ) {
 		if( is_singular() ) {
 			?>
 
-			<div class="entry-header-container container">
-				<div class="entry-header-layer layer row">
-					<?php // @TODO: Add .col to post_classes instead of including it here ?>
-					<div class="col">
+			<div class="entry-header-wrap layer-wrap">
+				<div class="entry-header-container container">
+					<div class="entry-header-layer layer row">
+						<?php // @TODO: Add .col to post_classes instead of including it here ?>
+						<div class="col">
 
 			<?php
 		}
@@ -102,10 +103,11 @@ if( !function_exists( 'childtheme_entry_header_markup_close' ) ) {
 		if( is_singular() ) {
 			?>
 
+						</div>
+						<?php // @TODO: Add .col to post_classes instead of including it here ?>
+					</div>
 				</div>
-				<?php // @TODO: Add .col to post_classes instead of including it here ?>
 			</div>
-		</div>
 
 			<?php
 		}
@@ -119,10 +121,11 @@ if( !function_exists( 'childtheme_entry_footer_markup_open' ) ) {
 		if( is_singular() ) {
 			?>
 
-			<div class="entry-footer-container container">
-				<div class="entry-footer-layer layer row">
-					<?php // @TODO: Add .col to post_classes instead of including it here ?>
-					<div class="col">
+			<div class="entry-footer-wrap layer-wrap">
+				<div class="entry-footer-container container">
+					<div class="entry-footer-layer layer row">
+						<?php // @TODO: Add .col to post_classes instead of including it here ?>
+						<div class="col">
 
 			<?php
 		}
@@ -135,8 +138,9 @@ if( !function_exists( 'childtheme_entry_footer_markup_close' ) ) {
 		if( is_singular() ) {
 			?>
 
+						</div>
+						<?php // @TODO: Add .col to post_classes instead of including it here ?>
 					</div>
-					<?php // @TODO: Add .col to post_classes instead of including it here ?>
 				</div>
 			</div>
 
