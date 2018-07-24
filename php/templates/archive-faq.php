@@ -25,7 +25,7 @@ if( !function_exists( 'childtheme_do_faq_title' ) ) {
 	function childtheme_do_faq_title() {
 		?>
 
-		<header class="archive-description">
+		<header class="archive-description container">
 			<h1 class="archive-title">Frequently Asked Questions</h1>
 		</header>
 
