@@ -1,4 +1,24 @@
 <?php
+// override content archive option
+add_filter( 'genesis_pre_get_option_content_archive','childtheme_override_content_archive' );
+if( !function_exists( 'childtheme_override_content_archive' ) ) {
+	function childtheme_override_content_archive() {
+		if ( is_post_type_archive( 'faq' ) ) {
+			return 'full';
+		}
+	}
+}
+
+// override content archive limit
+add_filter( 'genesis_pre_get_option_content_archive_limit','childtheme_override_content_archive_limit' );
+if( !function_exists( 'childtheme_override_content_archive_limit' ) ) {
+	function childtheme_override_content_archive_limit() {
+		if ( is_post_type_archive( 'faq' ) ) {
+			return 0;
+		}
+	}
+}
+
 // do the archive title
 add_action( 'genesis_before_loop', 'childtheme_do_faq_title', 15 );
 if( !function_exists( 'childtheme_do_faq_title' ) ) {
