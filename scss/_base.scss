@@ -85,6 +85,14 @@ Site Structure
 .layer-wrap {
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
+
+	// allow fluid image containers to run full bleed
+	.container-fluid {
+		&.image-container {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 }
 
 /*
@@ -187,6 +195,19 @@ Layers
 	.carousel-control-prev, .carousel-control-next {
 		opacity: .8;
 		width: 5%;
+	}
+}
+
+.directory-layer {
+	.directory-name {
+		font-size: 1.6rem;
+		text-align: center;
+		letter-spacing: .05rem;
+	}
+
+	.directory-title {
+		text-align: center;
+		font-weight: bold;
 	}
 }
 
