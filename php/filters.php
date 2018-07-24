@@ -95,3 +95,16 @@ if( !function_exists( 'childtheme_edit_post_link' ) ) {
 		return true;
 	}
 }
+
+add_filter( 'do_shortcode_tag', 'childtheme_do_responsive_embed', 10, 3 );
+if( !function_exists( 'childtheme_do_responsive_embed' ) ) {
+	function childtheme_do_responsive_embed( $output, $tag, $attr ) {
+		// target the embed shortcode
+		if( $tag == 'embed' ) {
+			// @TODO: Look for a way to manipulate the "16by9" ratio dynamically so this solution will work for all supported ratios (https://getbootstrap.com/docs/4.1/utilities/embed/#about)
+			$output = '<div class="embed-responsive embed-responsive-16by9">' . $output . '</div>';
+		}
+
+	  return $output;
+	}
+}
