@@ -41,15 +41,6 @@ if( !function_exists( 'childtheme_enqueue_scripts' ) ) {
 	}
 }
 
-/*
-// setup custom functionality for the childtheme
-add_action( 'after_setup_theme', 'childtheme_setup_theme' );
-function childtheme_setup_theme() {
-	remove_action( 'genesis_after_header', 'genesis_do_nav' );
-	add_action( 'genesis_before_header', 'genesis_do_nav' );
-}
-*/
-
 // add the utility bar
 add_action( 'genesis_before_header', 'childtheme_add_utility_bar' );
 if( !function_exists( 'childtheme_add_utility_bar' ) ) {
@@ -101,19 +92,9 @@ add_action( 'the_post', 'childtheme_add_post_markup' );
 
 if( !function_exists( 'childtheme_add_post_markup' ) ) {
 	function childtheme_add_post_markup() {
-		if( is_home() ) {
+		if( is_home() || is_archive() ) {
 			add_action( 'genesis_before_entry', 'childtheme_post_markup_open', 6 );
 			add_action( 'genesis_after_entry', 'childtheme_post_markup_close', 14 );
-		}
-	}
-}
-
-// wrap entry-content in a container on specific pages
-if( !function_exists( 'childtheme_add_container_markup' ) ) {
-	function childtheme_add_container_markup() {
-		if( is_home() ) {
-			//add_action( 'genesis_entry_content', 'childtheme_container_markup_open', 6 );
-			//add_action( 'genesis_entry_content', 'childtheme_container_markup_close', 14 );
 		}
 	}
 }
@@ -123,10 +104,7 @@ add_action( 'after_setup_theme', 'childtheme_move_after_entry_widget' );
 if( !function_exists( 'childtheme_move_after_entry_widget' ) ) {
 	function childtheme_move_after_entry_widget() {
 		remove_action( 'genesis_after_entry', 'genesis_after_entry_widget_area' );
-		//add_action( 'genesis_entry_footer', 'childtheme_container_markup_open', 6 );
 		add_action( 'genesis_entry_footer', 'genesis_after_entry_widget_area' );
-		//add_action( 'genesis_entry_footer', 'childtheme_container_markup_close', 14 );
-		add_post_type_support( 'page', 'genesis-after-entry-widget-area' );
 	}
 }
 

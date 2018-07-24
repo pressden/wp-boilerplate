@@ -55,6 +55,9 @@ add_theme_support( 'genesis-responsive-viewport' );
 // add excerpts to pages
 add_post_type_support( 'page', 'excerpt' );
 
+// add after entry widget area to pages
+add_post_type_support( 'page', 'genesis-after-entry-widget-area' );
+
 
 // CUSTOM POST TYPE SETUP
 
