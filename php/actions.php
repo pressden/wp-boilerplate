@@ -6,7 +6,7 @@ add_filter( 'pre_get_posts', 'childtheme_modify_faq_archive_query' );
 if( !function_exists( 'childtheme_modify_faq_archive_query' ) ) {
 	function childtheme_modify_faq_archive_query( $query ) {
 		if ( $query->is_main_query() && $query->is_post_type_archive( 'faq' ) ) {
-			// Remove the `posts_per_page` limit so all FAQ's load on a single page
+			// remove the `posts_per_page` limit so all FAQ's load on a single page
 			$query->query_vars['posts_per_page'] = -1;
 		}
 
@@ -63,6 +63,15 @@ add_action( 'genesis_after_header', 'childtheme_header_banner' );
 if( !function_exists( 'childtheme_header_banner' ) ) {
 	function childtheme_header_banner() {
 		echo '<div class="site-header-banner"></div>';
+	}
+}
+
+// move the secondary sidebar inside of the content-sidebar wrap
+add_action( 'after_setup_theme', 'childtheme_move_sidebar_alt' );
+if( !function_exists( 'childtheme_move_sidebar_alt' ) ) {
+	function childtheme_move_sidebar_alt() {
+		remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+		add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
 	}
 }
 

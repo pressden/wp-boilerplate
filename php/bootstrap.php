@@ -266,26 +266,26 @@ if( !function_exists( 'childtheme_add_bootstrap_layout_classes' ) ) {
 			break;
 
 			case 'sidebar-content':
-				$classes_to_add['content'] = 'col-sm-9 col-sm-push-3';
-				$classes_to_add['sidebar-primary'] = 'col-sm-3 col-sm-pull-9';
+				$classes_to_add['content'] = 'col-lg-9 order-lg-last';
+				$classes_to_add['sidebar-primary'] = 'col-lg-3';
 			break;
 
 			case 'content-sidebar-sidebar':
-				$classes_to_add['content'] = 'col-sm-6';
-				$classes_to_add['sidebar-primary'] = 'col-sm-3';
-				$classes_to_add['sidebar-secondary'] = 'col-sm-3';
+				$classes_to_add['content'] = 'col-lg-6';
+				$classes_to_add['sidebar-primary'] = 'col-lg-3';
+				$classes_to_add['sidebar-secondary'] = 'col-lg-3';
 			break;
 
 			case 'sidebar-sidebar-content':
-				$classes_to_add['content'] = 'col-sm-6 col-sm-push-6';
-				$classes_to_add['sidebar-primary'] = 'col-sm-3 col-sm-pull-3';
-				$classes_to_add['sidebar-secondary'] = 'col-sm-3 col-sm-pull-9';
+				$classes_to_add['content'] = 'col-lg-6 order-lg-last';
+				$classes_to_add['sidebar-primary'] = 'col-lg-3';
+				$classes_to_add['sidebar-secondary'] = 'col-lg-3';
 			break;
 
 			case 'sidebar-content-sidebar':
-				$classes_to_add['content'] = 'col-sm-6 col-sm-push-3';
-				$classes_to_add['sidebar-primary'] = 'col-sm-3 col-sm-push-3';
-				$classes_to_add['sidebar-secondary'] = 'col-sm-3 col-sm-pull-9';
+				$classes_to_add['content'] = 'col-lg-6';
+				$classes_to_add['sidebar-primary'] = 'col-lg-3 order-lg-first';
+				$classes_to_add['sidebar-secondary'] = 'col-lg-3';
 			break;
 
 			default:
