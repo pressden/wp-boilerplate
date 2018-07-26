@@ -94,16 +94,13 @@ if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
 	}
 }
 
-// ensure all page sections have the proper containers
-//add_action( 'genesis_entry_header', 'childtheme_container_markup_open', 6 );
-//add_action( 'genesis_entry_header', 'childtheme_container_markup_close', 14 );
-add_action( 'the_post', 'childtheme_add_post_markup' );
-
-if( !function_exists( 'childtheme_add_post_markup' ) ) {
-	function childtheme_add_post_markup() {
+// ensure all archives have the proper containers
+add_action( 'the_post', 'childtheme_add_archive_markup' );
+if( !function_exists( 'childtheme_add_archive_markup' ) ) {
+	function childtheme_add_archive_markup() {
 		if( is_home() || is_archive() ) {
-			add_action( 'genesis_before_entry', 'childtheme_post_markup_open', 6 );
-			add_action( 'genesis_after_entry', 'childtheme_post_markup_close', 14 );
+			add_action( 'genesis_before_loop', 'childtheme_archive_markup_open', 11);
+			add_action( 'genesis_after_endwhile', 'childtheme_archive_markup_close', 9);
 		}
 	}
 }

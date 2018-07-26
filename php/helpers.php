@@ -104,27 +104,23 @@ if( !function_exists( 'childtheme_container_markup_close' ) ) {
 }
 
 // add loop start markup
-if( !function_exists( 'childtheme_post_markup_open' ) ) {
-	function childtheme_post_markup_open() {
+if( !function_exists( 'childtheme_archive_markup_open' ) ) {
+	function childtheme_archive_markup_open() {
 		?>
 
-		<section id="post-section" class="loop-wrap layer-wrap">
-			<div class="post-container container">
-				<div class="post-layer layer row">
-					<?php // @TODO: Add .col to post_classes instead of including it here ?>
-					<div class="col">
+		<section id="archive-section" class="archive-wrap layer-wrap">
+			<div class="archive-container container">
+				<div class="archive-layer layer row">
 
 		<?php
 	}
 }
 
 // add loop end markup
-if( !function_exists( 'childtheme_post_markup_close' ) ) {
-	function childtheme_post_markup_close() {
+if( !function_exists( 'childtheme_archive_markup_close' ) ) {
+	function childtheme_archive_markup_close() {
 		?>
 
-					</div>
-					<?php // @TODO: Add .col to post_classes instead of including it here ?>
 				</div>
 			</div>
 		</section>

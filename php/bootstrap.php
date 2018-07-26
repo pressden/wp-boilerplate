@@ -168,6 +168,7 @@ add_filter( 'genesis_attr_search-form',                 'childtheme_add_bootstra
 add_filter( 'genesis_attr_entry-header',                'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_blog-template-description',   'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_posts-page-description',      'childtheme_add_bootstrap_classes', 11, 2 );
+add_filter( 'genesis_attr_entry',               				'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_entry-content',               'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_entry-footer',                'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_entry-pagination',            'childtheme_add_bootstrap_classes', 11, 2 );
@@ -211,6 +212,7 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 				'content'                     => 'col-md-9',
 				'sidebar-primary'             => 'col-md-3',
 				'archive-pagination'          => 'clearfix',
+				'entry'												=> 'col-12',
 				'entry-header'                => 'clearfix',
 				'entry-content'               => 'clearfix',
 				'entry-footer'                => 'clearfix',
