@@ -29,6 +29,9 @@ add_filter( 'emoji_svg_url', '__return_false' );
 
 // WORDPRESS SETUP
 
+// add support for post formats
+add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+
 // add HTML5 markup structure
 add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
