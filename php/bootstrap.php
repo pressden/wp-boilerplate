@@ -168,6 +168,7 @@ add_filter( 'genesis_attr_search-form',                 'childtheme_add_bootstra
 add_filter( 'genesis_attr_entry-header',                'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_blog-template-description',   'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_posts-page-description',      'childtheme_add_bootstrap_classes', 11, 2 );
+add_filter( 'genesis_attr_taxonomy-archive-description','childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_entry',               				'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_entry-content',               'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_entry-footer',                'childtheme_add_bootstrap_classes', 11, 2 );
@@ -200,6 +201,7 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 				// archive and template titles
 				'blog-template-description'   => 'container',
 				'posts-page-description'      => 'container',
+				'taxonomy-archive-description'=> 'col-12',
 
 				// nav regions
 				//'nav-primary'               => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
