@@ -25,7 +25,7 @@ if( !function_exists( 'childtheme_do_faq_title' ) ) {
 	function childtheme_do_faq_title() {
 		?>
 
-		<header class="archive-description container">
+		<header class="archive-description col-12">
 			<h1 class="archive-title">Frequently Asked Questions</h1>
 		</header>
 
@@ -37,15 +37,30 @@ if( !function_exists( 'childtheme_do_faq_title' ) ) {
 add_action( 'genesis_loop', 'childtheme_open_faq_accordion', 5 );
 if( !function_exists( 'childtheme_open_faq_accordion' ) ) {
 	function childtheme_open_faq_accordion() {
-		echo '<div id="faq-accordion" class="accordion">';
+		echo '<div id="faq-accordion" class="accordion col-12">';
 	}
 }
 
-// open the card markup
-add_action( 'genesis_before_entry', 'childtheme_open_faq_entry' );
-if( !function_exists( 'childtheme_open_faq_entry' ) ) {
-	function childtheme_open_faq_entry() {
-		echo '<div class="card">';
+// override the bootstrap filter to output render articles in two columns
+add_filter( 'childtheme_bootstrap_classes', 'childtheme_modify_bootstrap_faq_classes', 11, 3 );
+if( !function_exists( 'childtheme_modify_bootstrap_faq_classes' ) ) {
+	function childtheme_modify_bootstrap_faq_classes( $classes_to_add, $context, $attr ) {
+		$classes_to_add['entry'] = 'card';
+		$classes_to_add['entry-content'] = 'collapse';
+
+		return $classes_to_add;
+	}
+}
+
+// add additional attributes to the entry-content markup
+add_filter( 'genesis_attr_entry-content_output', 'childtheme_add_entry_content_attributes', 10, 4 );
+if( !function_exists( 'childtheme_add_entry_content_attributes' ) ) {
+	function childtheme_add_entry_content_attributes( $output, $attributes, $context, $args ) {
+		$entry_content_id = 'entry-content-' . get_the_ID();
+
+		$output .= ' id="' . $entry_content_id . '" aria-labelledby="' . $entry_content_id . '" data-parent="#faq-accordion"';
+
+		return $output;
 	}
 }
 
@@ -82,21 +97,13 @@ if( !function_exists( 'childtheme_open_faq_post_content' ) ) {
 		// give the collapsible content a unique id
 		$entry_content_id = 'entry-content-' . get_the_ID();
 
-		echo '<section id="' . $entry_content_id . '" class="card-body collapse" aria-labelledby="' . $entry_content_id . '" data-parent="#faq-accordion">';
-	}
-}
-
-// close the collapsible content markup
-add_action( 'genesis_entry_content', 'childtheme_close_faq_post_content', 15 );
-if( !function_exists( 'childtheme_close_faq_post_content' ) ) {
-	function childtheme_close_faq_post_content() {
-		echo '</section>';
+		echo '<div class="card-body">';
 	}
 }
 
 // close markup (div)
-add_action( 'genesis_after_entry', 'childtheme_close_faq_div' );
 add_action( 'genesis_loop', 'childtheme_close_faq_div', 15 );
+add_action( 'genesis_entry_content', 'childtheme_close_faq_div', 15 );
 if( !function_exists( 'childtheme_close_faq_div' ) ) {
 	function childtheme_close_faq_div() {
 		echo '</div>';
