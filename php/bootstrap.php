@@ -211,8 +211,8 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 				'search-form'									=> 'form-inline',
 
 				// main regions
-				'content'                     => 'col-md-9',
-				'sidebar-primary'             => 'col-md-3',
+				'content'                     => 'col-lg-9',
+				'sidebar-primary'             => 'col-lg-3',
 				'archive-pagination'          => 'clearfix',
 				'entry'												=> 'col-12',
 				'entry-header'                => 'clearfix',
