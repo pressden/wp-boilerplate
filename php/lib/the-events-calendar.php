@@ -27,4 +27,18 @@ function tribe_genesis_bypass_genesis_do_post_content() {
 			add_action( 'genesis_entry_content', 'the_content', 15 );
 		}
 	}
+
+	if( is_singular( 'tribe_events' ) ) {
+		// remove the bootstrap content markup
+		remove_filter( 'the_content', 'apl_content_layers_filter' );
+		remove_filter( 'the_content', 'childtheme_content_layers_filter' );
+
+		// override the bootstrap classes filter to wrap entry-content in a container
+		add_filter( 'childtheme_bootstrap_classes', 'childtheme_modify_event_entry_classes', 11, 3 );
+		function childtheme_modify_event_entry_classes( $classes_to_add, $context, $attr ) {
+			$classes_to_add['entry-content'] = 'container';
+
+			return $classes_to_add;
+		}
+	}
 }
