@@ -214,7 +214,6 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 				'content'                     => 'col-lg-9',
 				'sidebar-primary'             => 'col-lg-3',
 				'archive-pagination'          => 'clearfix',
-				'entry'												=> 'col-12',
 				'entry-header'                => 'clearfix',
 				'entry-content'               => 'clearfix',
 				'entry-footer'                => 'clearfix',
@@ -264,9 +263,15 @@ if( !function_exists( 'childtheme_add_bootstrap_layout_classes' ) ) {
 
 		switch ( $layout ) {
 			case 'full-width-content':
-				$classes_to_add['site-inner'] = '';
-				$classes_to_add['content-sidebar-wrap'] = '';
-				$classes_to_add['content'] = '';
+				// remove outer bootstrap classes (container, row, col) on pages and posts
+				if( is_page() || is_singular( 'post' ) ) {
+					$classes_to_add['site-inner'] = '';
+					$classes_to_add['content-sidebar-wrap'] = '';
+					$classes_to_add['content'] = '';
+				}
+				else {
+					$classes_to_add['content'] = 'col-12';
+				}
 			break;
 
 			case 'sidebar-content':
