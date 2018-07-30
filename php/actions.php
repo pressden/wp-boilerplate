@@ -95,7 +95,7 @@ if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
 }
 
 // ensure all archives have the proper containers
-add_action( 'the_post', 'childtheme_add_archive_markup' );
+//add_action( 'the_post', 'childtheme_add_archive_markup' );
 if( !function_exists( 'childtheme_add_archive_markup' ) ) {
 	function childtheme_add_archive_markup() {
 		if( is_home() || is_archive() ) {

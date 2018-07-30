@@ -25,7 +25,7 @@ if( !function_exists( 'childtheme_do_faq_title' ) ) {
 	function childtheme_do_faq_title() {
 		?>
 
-		<header class="archive-description col-12">
+		<header class="archive-description">
 			<h1 class="archive-title">Frequently Asked Questions</h1>
 		</header>
 
@@ -37,7 +37,7 @@ if( !function_exists( 'childtheme_do_faq_title' ) ) {
 add_action( 'genesis_loop', 'childtheme_open_faq_accordion', 5 );
 if( !function_exists( 'childtheme_open_faq_accordion' ) ) {
 	function childtheme_open_faq_accordion() {
-		echo '<div id="faq-accordion" class="accordion col-12">';
+		echo '<div id="faq-accordion" class="accordion">';
 	}
 }
 
