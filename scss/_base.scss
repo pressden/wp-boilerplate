@@ -237,6 +237,20 @@ Layers
 	}
 }
 
+.home {
+	.related-content-wrap {
+		padding-bottom: 1.5rem;
+	}
+}
+
+.related-content-wrap {
+	padding-bottom: 0;
+
+	.related-post {
+		padding-bottom: 1.5rem;
+	}
+}
+
 /*
 Site Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
