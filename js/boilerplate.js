@@ -19,4 +19,11 @@ $( document ).ready( function () {
 		}
 	} );
 
+	// add Bootstrap 4 pagination classes to the genesis pagination markup
+	// @TODO: Genesis (v2.6.1) does not allow direct access to the ul, li or a tags. Perhaps someday...
+	$( 'div.pagination ul' ).addClass( 'pagination' );
+	$( 'div.pagination li' ).addClass( 'page-item' );
+	$( 'div.pagination a' ).addClass( 'page-link' );
+	$( 'div.pagination' ).removeClass( 'pagination' );
+
 } );
