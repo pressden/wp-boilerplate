@@ -84,3 +84,17 @@ if( !function_exists( 'childtheme_initialize_faqs' ) ) {
 		childtheme_register_post_type( 'faq', 'FAQ', 'FAQs' );
 	}
 }
+
+// initialize the layer post type (reusable layers shared across multiple pages / posts)
+add_action( 'init', 'childtheme_initialize_layers' );
+if( !function_exists( 'childtheme_initialize_layers' ) ) {
+	function childtheme_initialize_layers() {
+		$args = array (
+			'exclude_from_search' => true,
+			'publicly_queryable' => false,
+			'supports' => array( 'title', 'author' ),
+		);
+
+		childtheme_register_post_type( 'layer', 'Layer', 'Layers', $args );
+	}
+}
