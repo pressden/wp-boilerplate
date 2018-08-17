@@ -1,19 +1,6 @@
 <?php
 // ACTIONS
 
-// modify the faq archive main query
-add_filter( 'pre_get_posts', 'childtheme_modify_faq_archive_query' );
-if( !function_exists( 'childtheme_modify_faq_archive_query' ) ) {
-	function childtheme_modify_faq_archive_query( $query ) {
-		if ( $query->is_main_query() && $query->is_post_type_archive( 'faq' ) ) {
-			// remove the `posts_per_page` limit so all FAQ's load on a single page
-			$query->query_vars['posts_per_page'] = -1;
-		}
-
-		return $query;
-	}
-}
-
 // enqueue fonts
 add_action( 'wp_enqueue_scripts', 'childtheme_enqueue_fonts' );
 if( !function_exists( 'childtheme_enqueue_fonts' ) ) {
@@ -72,6 +59,27 @@ if( !function_exists( 'childtheme_move_sidebar_alt' ) ) {
 	function childtheme_move_sidebar_alt() {
 		remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
 		add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
+	}
+}
+
+// modify the faq archive main query
+add_filter( 'pre_get_posts', 'childtheme_modify_faq_archive_query' );
+if( !function_exists( 'childtheme_modify_faq_archive_query' ) ) {
+	function childtheme_modify_faq_archive_query( $query ) {
+		if ( $query->is_main_query() && $query->is_post_type_archive( 'faq' ) ) {
+			// remove the `posts_per_page` limit so all FAQ's load on a single page
+			$query->query_vars['posts_per_page'] = -1;
+		}
+
+		return $query;
+	}
+}
+
+// register the auto menu widget
+add_action( 'widgets_init', 'childtheme_register_auto_menu_widget' );
+if( !function_exists( 'childtheme_register_auto_menu_widget' ) ) {
+	function childtheme_register_auto_menu_widget() {
+		register_widget( 'Childtheme_Auto_Menu_Widget' );
 	}
 }
 
