@@ -110,7 +110,7 @@ class Childtheme_Auto_Menu_Widget extends WP_Widget {
 			}
 			?>
 			
-			<ul class="nav sub-menu">
+			<ul class="nav flex-column sub-menu">
 
 				<?php foreach( $auto_menu as $menu_item ): ?>
 
