@@ -1,4 +1,15 @@
 /* begin variables.scss */
 
+/* define the base font size for use in heading calculations below */
+$font-size-base: 1rem !default;
+
+/* customize default heading font sizes */
+$h1-font-size: $font-size-base * 2.25 !default;
+$h2-font-size: $font-size-base * 1.875 !default;
+$h3-font-size: $font-size-base * 1.625 !default;
+$h4-font-size: $font-size-base * 1.375 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base * 1.125 !default;
+
 /* defaut carousel arrow color */
 $carousel-control-color: #777 !default;
