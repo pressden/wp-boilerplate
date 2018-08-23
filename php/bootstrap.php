@@ -183,7 +183,6 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 
 				// archive and template titles
 				'blog-template-description'   => 'container',
-				'taxonomy-archive-description'=> 'col-12',
 
 				// nav regions
 				//'nav-primary'               => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
