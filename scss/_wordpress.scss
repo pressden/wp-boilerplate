@@ -7,9 +7,7 @@
 	}
 }
 
-.archive-description,
-.sidebar-primary,
-.sidebar-secondary {
+.archive-description {
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
 }
@@ -155,6 +153,9 @@
 }
 
 .widget {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+
 	&.widget_nav_menu {
 		.menu {
 			padding-left: 0;
