@@ -2,20 +2,16 @@
 .page,
 .single {
 	.entry-header {
-		padding-top: 3rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
 	}
 }
 
-.archive-title {
-	padding-top: 3rem;
-}
-
-.sidebar-primary {
-	padding-top: 3rem;
-}
-
+.archive-description,
+.sidebar-primary,
 .sidebar-secondary {
-	padding-top: 3rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 }
 
 .entry {
