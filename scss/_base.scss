@@ -122,6 +122,11 @@ Utility Widgets
 
 .utility-widgets {
 	background-color: $light;
+
+	.widget {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 }
 
 /*
