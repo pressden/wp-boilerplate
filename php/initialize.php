@@ -72,7 +72,13 @@ add_action( 'init', 'childtheme_initialize_contacts' );
 if( !function_exists( 'childtheme_initialize_contacts' ) ) {
 	function childtheme_initialize_contacts() {
 		childtheme_register_taxonomy( 'contact-group', 'Contact Group', 'Contact Groups', array( 'applies_to' => 'contact' ) );
-		childtheme_register_post_type( 'contact', 'Contact', 'Contacts', array( 'rewrite' => array( 'slug' => 'contact-directory' ) ) );
+
+		$args = array (
+			'rewrite' => array( 'slug' => 'contact-directory' ),
+			'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		);
+
+		childtheme_register_post_type( 'contact', 'Contact', 'Contacts', $args );
 	}
 }
 
