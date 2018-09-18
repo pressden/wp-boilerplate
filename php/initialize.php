@@ -67,6 +67,23 @@ add_post_type_support( 'page', 'genesis-after-entry-widget-area' );
 
 // CUSTOM POST TYPE SETUP
 
+// initialize the banner post type
+add_action( 'init', 'childtheme_initialize_banners' );
+if( !function_exists( 'childtheme_initialize_banners' ) ) {
+	function childtheme_initialize_banners() {
+		childtheme_register_taxonomy( 'banner-group', 'Banner Group', 'Banner Groups', array( 'applies_to' => 'banner' ) );
+		childtheme_register_taxonomy( 'banner-size', 'Banner Size', 'Banner Sizes', array( 'applies_to' => 'banner' ) );
+
+		$args = array (
+			'exclude_from_search' => true,
+			'publicly_queryable' => false,
+			'supports' => array( 'title', 'thumbnail' ),
+		);
+
+		childtheme_register_post_type( 'banner', 'Banner', 'Banners', $args );
+	}
+}
+
 // initialize the contact post type (useful for staff directories / committees / boards / etc.)
 add_action( 'init', 'childtheme_initialize_contacts' );
 if( !function_exists( 'childtheme_initialize_contacts' ) ) {
