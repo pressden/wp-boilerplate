@@ -69,14 +69,20 @@
 	@extend .row;
 
 	.gallery-item {
+		@extend .mb-0;
 		padding: 5px !important;
+		@extend .card;
+		@extend .img-fluid;
 		@extend .col-12;
 		@extend .border-0;
 
-		.gallery-icon {
+		.media-container,
+		 {
 			img {
 				@extend .mx-auto;
 				@extend .d-block;
+				margin: 0;
+				width: 100%;
 			}
 		}
 	}
