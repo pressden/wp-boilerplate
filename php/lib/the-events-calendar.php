@@ -16,12 +16,14 @@ add_action( 'get_header', 'tribe_genesis_bypass_genesis_do_post_content' );
 function tribe_genesis_bypass_genesis_do_post_content() {
 	if ( class_exists( 'Tribe__Events__Main' ) && class_exists( 'Tribe__Events__Pro__Main' ) ) {
 		if ( tribe_is_month() || tribe_is_upcoming() || tribe_is_past() || tribe_is_day() || tribe_is_map() || tribe_is_photo() || tribe_is_week() || ( tribe_is_recurring_event() && ! is_singular( 'tribe_events' ) ) ) {
+			add_filter( 'genesis_post_permalink', '__return_false' );
 			remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 			remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 			add_action( 'genesis_entry_content', 'the_content', 15 );
 		}
 	} elseif ( class_exists( 'Tribe__Events__Main' ) && ! class_exists( 'Tribe__Events__Pro__Main' ) ) {
 		if ( tribe_is_month() || tribe_is_upcoming() || tribe_is_past() || tribe_is_day() ) {
+			add_filter( 'genesis_post_permalink', '__return_false' );
 			remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 			remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 			add_action( 'genesis_entry_content', 'the_content', 15 );
