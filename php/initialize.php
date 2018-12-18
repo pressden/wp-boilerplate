@@ -122,12 +122,12 @@ if( !function_exists( 'childtheme_initialize_layers' ) ) {
 	}
 }
 
-// initialize the portfolio item post type (useful for showcasing various types of client work)
-add_action( 'init', 'childtheme_initialize_portfolio_items' );
-if( !function_exists( 'childtheme_initialize_portfolio_items' ) ) {
-	function childtheme_initialize_portfolio_items() {
-		childtheme_register_taxonomy( 'client', 'Client', 'Clients', array( 'applies_to' => 'portfolio-item' ) );
-		childtheme_register_taxonomy( 'work-type', 'Work Type', 'Work Types', array( 'applies_to' => 'portfolio-item' ) );
-		childtheme_register_post_type( 'portfolio-item', 'Portfolio Item', 'Portfolio Items' );
+// initialize the work item post type (useful for showcasing various types of client work)
+add_action( 'init', 'childtheme_initialize_work_items' );
+if( !function_exists( 'childtheme_initialize_work_items' ) ) {
+	function childtheme_initialize_work_items() {
+		childtheme_register_taxonomy( 'client', 'Client', 'Clients', array( 'applies_to' => 'work-item' ) );
+		childtheme_register_taxonomy( 'work-type', 'Work Type', 'Work Types', array( 'applies_to' => 'work-item' ) );
+		childtheme_register_post_type( 'work-item', 'Work Item', 'Work Items' );
 	}
 }
