@@ -15,6 +15,11 @@ if( !function_exists( 'childtheme_body_class' ) ) {
 if( !function_exists( 'apl_content_layers_filter' ) ) {
 	add_filter( 'the_content', 'childtheme_content_layers_filter' );
 	function childtheme_content_layers_filter( $content ) {
+		// return without markup if there is no content (prevents excess whitespace)
+		if( !$content ) {
+			return $content;
+		}
+
 		// initialize the output variable
 		$output = '';
 
