@@ -269,6 +269,27 @@ Layers
 	}
 }
 
+.hero-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  img, video {
+    width: 100%;
+  }
+}
+
+.hero-info {
+  padding: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
 .related-post-wrap {
 	display: block;
 }
