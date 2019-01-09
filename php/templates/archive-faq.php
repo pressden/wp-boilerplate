@@ -1,8 +1,8 @@
 <?php
 // override content archive option
-add_filter( 'genesis_pre_get_option_content_archive','childtheme_override_content_archive' );
-if( !function_exists( 'childtheme_override_content_archive' ) ) {
-	function childtheme_override_content_archive() {
+add_filter( 'genesis_pre_get_option_content_archive','childtheme_override_faq_archive_option' );
+if( !function_exists( 'childtheme_override_faq_archive_option' ) ) {
+	function childtheme_override_faq_archive_option() {
 		if ( is_post_type_archive( 'faq' ) ) {
 			return 'full';
 		}
@@ -10,9 +10,9 @@ if( !function_exists( 'childtheme_override_content_archive' ) ) {
 }
 
 // override content archive limit
-add_filter( 'genesis_pre_get_option_content_archive_limit','childtheme_override_content_archive_limit' );
-if( !function_exists( 'childtheme_override_content_archive_limit' ) ) {
-	function childtheme_override_content_archive_limit() {
+add_filter( 'genesis_pre_get_option_content_archive_limit','childtheme_override_faq_archive_limit' );
+if( !function_exists( 'childtheme_override_faq_archive_limit' ) ) {
+	function childtheme_override_faq_archive_limit() {
 		if ( is_post_type_archive( 'faq' ) ) {
 			return 0;
 		}
@@ -53,9 +53,9 @@ if( !function_exists( 'childtheme_modify_bootstrap_faq_classes' ) ) {
 }
 
 // add additional attributes to the entry-content markup
-add_filter( 'genesis_attr_entry-content_output', 'childtheme_add_entry_content_attributes', 10, 4 );
-if( !function_exists( 'childtheme_add_entry_content_attributes' ) ) {
-	function childtheme_add_entry_content_attributes( $output, $attributes, $context, $args ) {
+add_filter( 'genesis_attr_entry-content_output', 'childtheme_add_faq_entry_content_attributes', 10, 4 );
+if( !function_exists( 'childtheme_add_faq_entry_content_attributes' ) ) {
+	function childtheme_add_faq_entry_content_attributes( $output, $attributes, $context, $args ) {
 		$entry_content_id = 'entry-content-' . get_the_ID();
 
 		$output .= ' id="' . $entry_content_id . '" aria-labelledby="' . $entry_content_id . '" data-parent="#faq-accordion"';
