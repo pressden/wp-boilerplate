@@ -19,7 +19,7 @@ if( !function_exists( 'childtheme_nav_menu_args_filter' ) ) {
 						</button>
 
 						<div class="collapse navbar-collapse" id="' . $menu_id . '">
-							<ul id="%1$s" class="%2$s nav nav-pills nav-fill">
+							<ul id="%1$s" class="%2$s nav nav-fill">
 								%3$s
 							</ul>
 						</div>
