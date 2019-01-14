@@ -86,7 +86,7 @@ if( !function_exists( 'childtheme_entry_header_markup_open' ) ) {
 		if( is_singular() ) {
 			?>
 
-			<div class="entry-header-container container">
+			<div class="entry-header-container">
 
 			<?php
 		}
@@ -113,7 +113,7 @@ if( !function_exists( 'childtheme_entry_footer_markup_open' ) ) {
 		if( is_singular() ) {
 			?>
 
-			<div class="entry-footer-container container">
+			<div class="entry-footer-container">
 
 			<?php
 		}
@@ -178,16 +178,12 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 				'utility-widget-area'         => 'col-lg',
 
 				// header regions
-				'title-area'                  => 'col-lg-4',
-				'header-widget-area'          => 'col-lg-8',
+				'title-area'                  => 'col-lg-5',
+				'header-widget-area'          => 'col-lg-7',
 
 				// archive and template titles
 				'blog-template-description'   => 'container',
 
-				// nav regions
-				//'nav-primary'               => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
-				//'nav-secondary'             => 'container navbar navbar-expand-md navbar-light', // navbar-static-top
-				
 				// search form
 				'search-form'									=> 'form-inline',
 

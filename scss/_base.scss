@@ -93,7 +93,14 @@ Site Structure
 	}
 }
 
+.site-inner {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .layer-wrap {
+  margin-left: -15px;
+  margin-right: -15px;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
 
@@ -133,35 +140,24 @@ Utility Widgets
 Site Header
 ---------------------------------------------------------------------------------------------------- */
 
-.site-header-banner {
-
+.site-header {
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  background-color: $gray-100;
 }
 
 /* Title Area
 ---------------------------------------------------------------------------------------------------- */
 
-.title-area {
-	@extend .py-1;
-}
-
 .site-title {
 	font-size: 36px;
-	margin-bottom: 0;
-}
+  margin-bottom: 0;
 
-.site-title {
-	a, &a:hover {
+  a, &a:hover {
+    margin: 0;
+    background-position: center !important;
+		background-size: cover !important;
 		color: $gray-800;
-	}
-}
-
-.site-header {
-	.site-title {
-		a {
-			background-position: center !important;
-			background-size: cover !important;
-			margin: 0;
-		}
 	}
 }
 
@@ -184,31 +180,36 @@ Site Header
 }
 
 /*
+Header Widget Area
+---------------------------------------------------------------------------------------------------- */
+.header-widget-area {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  @include media-breakpoint-down(md) {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 7px;
+  }
+}
+
+/*
 Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
 .nav-primary {
-	background-color: $gray-100;
+  background-color: $gray-200;
+
+  .navbar {
+    padding-left: 7px;
+  }
 }
 
 .nav-secondary {
-	@include media-breakpoint-up(lg) {
-		margin-top: 1.5rem;
-		float: right;
-	}
-
 	.navbar {
-		@extend .px-0;
-	}
-
-	.navbar-light {
-		.navbar-toggler {
-			margin-right: 2rem;
-
-			@include media-breakpoint-down(md) {
-				margin: 0 auto;
-			}
-		}
+    padding-left: 0;
+    padding-right: 0;
 	}
 }
 
@@ -218,6 +219,12 @@ Site Navigation
 
 .dropdown-menu {
 	margin-top: 0;
+}
+
+.navbar-toggler {
+  @include media-breakpoint-down(md) {
+    margin-left: 7px;
+  }
 }
 
 /*

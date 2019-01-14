@@ -4,7 +4,11 @@
 	.entry-header {
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
-	}
+  }
+
+  .entry-meta {
+    margin-bottom: 0;
+  }
 }
 
 .archive-description {
@@ -159,8 +163,13 @@
 }
 
 .widget {
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;
+  margin-bottom: .5rem;
+	padding-top: .5rem;
+  padding-bottom: .5rem;
+
+  ul {
+    padding-left: 1.5rem;
+  }
 
 	&.widget_nav_menu {
 		.menu {
@@ -168,4 +177,83 @@
 			list-style-type: none;
 		}
 	}
+}
+
+.entry-comments {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  .comment-list {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  .children {
+    margin-left: 5px;
+    padding-left: 1rem;
+    list-style-type: none;
+    border-left: 2px solid $gray-200;
+  }
+
+  .comment {
+    margin: -5px;
+    position: relative;
+
+    article {
+      padding: 5px;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $gray-100;
+      }
+    }
+  }
+
+  .comment-author {
+    margin-bottom: 0;
+
+    span[itemprop="name"] {
+      font-weight: bolder;
+    }
+
+    .says {
+      color: $gray-500;
+    }
+  }
+
+  .avatar {
+    margin: 0 1rem .25rem 0;
+    float: left;
+  }
+
+  .comment-meta {
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .comment-time-link {
+    font-size: .9rem;
+  }
+
+  .comment-edit-link {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .comment-content {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    clear: left;
+  }
+
+  .comment-reply {
+    text-transform: uppercase;
+    font-size: .9rem;
+  }
 }
