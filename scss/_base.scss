@@ -66,9 +66,13 @@ body {
 	font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6, .site-title {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.site-title {
 	font-family: 'Lato', sans-serif;
-	font-weight: 400
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: inherit;
 }
 
 /*
