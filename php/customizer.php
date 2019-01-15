@@ -26,7 +26,7 @@ if( !function_exists( 'childtheme_add_custom_background_support' ) ) {
 	function childtheme_add_custom_background_support() {
 		add_theme_support( 'custom-background', array(
 			'default-color'        	 => 'ffffff',
-      'default-image'          => get_stylesheet_directory_uri() . '/images/bg.png',
+      'default-image'          => get_stylesheet_directory_uri() . '/boilerplate/images/bg.png',
 			'wp-head-callback'       => 'childtheme_background_callback',
 		) );
 	}
