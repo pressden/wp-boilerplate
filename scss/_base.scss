@@ -147,7 +147,6 @@ Site Header
 .site-header {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
-  background-color: $gray-100;
 }
 
 /* Title Area
@@ -192,8 +191,8 @@ Header Widget Area
   align-items: flex-end;
 
   @include media-breakpoint-down(md) {
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding-left: 7px;
   }
 }
