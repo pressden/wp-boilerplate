@@ -86,7 +86,7 @@ if( !function_exists( 'childtheme_entry_header_markup_open' ) ) {
 		if( is_singular() ) {
 			?>
 
-			<div class="entry-header-container">
+			<div class="entry-header-container container">
 
 			<?php
 		}
@@ -113,7 +113,7 @@ if( !function_exists( 'childtheme_entry_footer_markup_open' ) ) {
 		if( is_singular() ) {
 			?>
 
-			<div class="entry-footer-container">
+			<div class="entry-footer-container container">
 
 			<?php
 		}
@@ -123,6 +123,60 @@ if( !function_exists( 'childtheme_entry_footer_markup_open' ) ) {
 add_action( 'genesis_entry_footer', 'childtheme_entry_footer_markup_close', 13 );
 if( !function_exists( 'childtheme_entry_footer_markup_close' ) ) {
 	function childtheme_entry_footer_markup_close() {
+		if( is_singular() ) {
+			?>
+
+			</div>
+
+			<?php
+		}
+	}
+}
+
+// add bootstrap markup around comments
+add_action( 'genesis_before_comments', 'childtheme_comments_markup_open', 7 );
+if( !function_exists( 'childtheme_comments_markup_open' ) ) {
+	function childtheme_comments_markup_open() {
+		if( is_singular() ) {
+			?>
+
+			<div class="comments-container container">
+
+			<?php
+		}
+	}
+}
+
+add_action( 'genesis_after_comments', 'childtheme_comments_markup_close', 13 );
+if( !function_exists( 'childtheme_comments_markup_close' ) ) {
+	function childtheme_comments_markup_close() {
+		if( is_singular() ) {
+			?>
+
+			</div>
+
+			<?php
+		}
+	}
+}
+
+// add bootstrap markup around the comment form
+add_action( 'genesis_before_comment_form', 'childtheme_comment_form_markup_open', 7 );
+if( !function_exists( 'childtheme_comment_form_markup_open' ) ) {
+	function childtheme_comment_form_markup_open() {
+		if( is_singular() ) {
+			?>
+
+			<div class="comment-form-container container">
+
+			<?php
+		}
+	}
+}
+
+add_action( 'genesis_after_comment_form', 'childtheme_comment_form_markup_close', 13 );
+if( !function_exists( 'childtheme_comment_form_markup_close' ) ) {
+	function childtheme_comment_form_markup_close() {
 		if( is_singular() ) {
 			?>
 
