@@ -279,6 +279,13 @@ Layers
 	}
 }
 
+.container-fluid {
+  .hero-col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .hero-media {
   display: flex;
   align-items: center;
