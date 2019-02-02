@@ -14,54 +14,27 @@ module.exports = {
     path: __dirname + "./../dist",
   },
   module: {
-    loaders: [
+    rules: [
       {test: /\.html$/, loader: 'raw-loader', exclude: /node_modules/},
-      {test: /\.css$/, loader: "style-loader!css-loader", exclude: /node_modules/},
-      {test: /\.scss$/, loader: "style-loader!css-loader!sass-loader", exclude: /node_modules/},
       {test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, loader: 'url-loader'},
       {
-        test: /\.(scss)$/,
-        use: [
-          {
-            loader: 'style-loader', // inject CSS to page
-          }, {
-            loader: 'css-loader', // translates CSS into CommonJS modules
-          }, {
-            loader: 'postcss-loader', // Run post css actions
-            options: {
-              plugins: function () { // post css plugins, can be exported to postcss.config.js
-                return [
-                  require('precss'),
-                  require('autoprefixer')
-                ];
+        test: /\.(sa|sc|c)ss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: [
+                  "node_modules/bootstrap/scss",
+                ]
               }
             }
-          }, {
-            loader: 'sass-loader' // compiles SASS to CSS
-          }
-        ]
-      }
-    ],
-    rules: [
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          }
-        )
-      },
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-                { loader: 'css-loader', options: { minimize: true } }
-            ]
+          ]
         })
       }
-    ]
+    ],
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
