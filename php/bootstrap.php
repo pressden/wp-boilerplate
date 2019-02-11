@@ -192,7 +192,9 @@ add_filter( 'genesis_attr_site-container',              'childtheme_add_bootstra
 add_filter( 'genesis_attr_structural-wrap',             'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_site-header',                 'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_title-area',                  'childtheme_add_bootstrap_classes', 11, 2 );
-add_filter( 'genesis_attr_utility-widget-area',         'childtheme_add_bootstrap_classes', 11, 2 );
+add_filter( 'genesis_attr_utility-widget-area-1',       'childtheme_add_bootstrap_classes', 11, 2 );
+add_filter( 'genesis_attr_utility-widget-area-2',       'childtheme_add_bootstrap_classes', 11, 2 );
+add_filter( 'genesis_attr_utility-widget-area-3',       'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_header-widget-area',          'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_nav-primary',                 'childtheme_add_bootstrap_classes', 11, 2 );
 add_filter( 'genesis_attr_nav-secondary',               'childtheme_add_bootstrap_classes', 11, 2 );
@@ -229,7 +231,9 @@ if( !function_exists( 'childtheme_add_bootstrap_classes' ) ) {
 				'content-sidebar-wrap'        => 'row',
 
 				// utility regions
-				'utility-widget-area'         => 'col-lg',
+        'utility-widget-area-1'         => 'utility-widget-area col-lg',
+        'utility-widget-area-2'         => 'utility-widget-area col-lg',
+        'utility-widget-area-3'         => 'utility-widget-area col-lg',
 
 				// header regions
 				'title-area'                  => 'col-lg-5',

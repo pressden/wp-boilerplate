@@ -188,7 +188,7 @@ if( !function_exists( 'childtheme_utility_widget_areas' ) ) {
 					array(
 						'open'    => '<div %s>',
 						'close'   => '</div>',
-						'context' => 'utility-widget-area',
+						'context' => 'utility-widget-area-' . $counter,
 						'content' => $widgets,
 						'echo'    => false,
 						'params'  => array(
