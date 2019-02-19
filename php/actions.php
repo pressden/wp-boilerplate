@@ -204,11 +204,11 @@ if( !function_exists( 'childtheme_utility_widget_areas' ) ) {
 		}
 
 		if ( $inside ) {
-			$_inside = genesis_structural_wrap( 'utility-widgets', 'open', 0 );
+			$_inside = genesis_structural_wrap( 'utility-widgets', 'open' );
 			$_inside .= '<div class="row">';
 			$_inside .= $inside;
 			$_inside .= '</div>';
-			$_inside .= genesis_structural_wrap( 'utility-widgets', 'close', 0 );
+			$_inside .= genesis_structural_wrap( 'utility-widgets', 'close' );
 
 			$output .= genesis_markup( array(
 				'open'    => '<section %s>' . genesis_sidebar_title( 'Utility' ),
@@ -281,7 +281,7 @@ if( !function_exists( 'childtheme_footer_widget_areas' ) ) {
 
 		if ( $inside ) {
 
-			$_inside = genesis_structural_wrap( 'footer-widgets', 'open', 0 );
+			$_inside = genesis_structural_wrap( 'footer-widgets', 'open' );
 
 			$_inside .= '<div class="row">';
 
@@ -289,7 +289,7 @@ if( !function_exists( 'childtheme_footer_widget_areas' ) ) {
 
 			$_inside .= '</div>';
 
-			$_inside .= genesis_structural_wrap( 'footer-widgets', 'close', 0 );
+			$_inside .= genesis_structural_wrap( 'footer-widgets', 'close' );
 
 			$output .= genesis_markup( array(
 				'open'    => '<div %s>' . genesis_sidebar_title( 'Footer' ),
