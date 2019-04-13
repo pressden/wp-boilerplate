@@ -9,7 +9,7 @@
 //* Child theme (edit as needed)
 define( 'CHILD_THEME_NAME', 'Child Theme' );
 define( 'CHILD_THEME_URL', 'https://github.com/pressden/wp-boilerplate' );
-define( 'CHILD_THEME_VERSION', '1.0.0' );
+define( 'CHILD_THEME_VERSION', '1.0.1' );
 
 require_once( 'boilerplate/php/boilerplate.php' );
 

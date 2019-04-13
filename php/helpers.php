@@ -20,7 +20,7 @@ if( !function_exists( 'childtheme_register_taxonomy' ) ) {
 			'choose_from_most_used' => 'Choose from the most used ' . strtolower( $plural ),
 			'menu_name' => $plural,
 		);
-		
+
 		$defaults = array(
 			'labels' => $labels,
 			'applies_to' => array( 'post' ),
@@ -46,7 +46,8 @@ if( !function_exists( 'childtheme_register_post_type' ) ) {
 			'view_item' => 'View ' . $singular,
 			'search_items' => 'Search ' . $singular,
 			'not_found' =>  'No ' . strtolower( $plural ) . ' found',
-			'not_found_in_trash' => 'No ' . strtolower( $plural ) . ' found in trash',
+      'not_found_in_trash' => 'No ' . strtolower( $plural ) . ' found in trash',
+      'parent_item_colon' => 'Parent ' . $singular . ':',
 		);
 
 		$defaults = array(
