@@ -154,10 +154,8 @@ Site Header
 	font-size: 36px;
   margin-bottom: 0;
 
-  a, &a:hover {
+  a, a:hover {
     margin: 0;
-    background-position: center !important;
-		background-size: cover !important;
 		color: $gray-800;
 	}
 }
@@ -168,7 +166,9 @@ Site Header
 			display: block;
 			text-indent: -9999px;
 			width: 345px;
-			height: 115px;
+      height: 115px;
+      background-position: center !important;
+		  background-size: cover !important;
 
 			@include media-breakpoint-down(lg) {
 				margin-left: auto;
