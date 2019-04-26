@@ -44,3 +44,17 @@ function tribe_genesis_bypass_genesis_do_post_content() {
 		}
 	}
 }
+
+// Fix for the attendee registration page glitch with Genesis
+add_action( 'genesis_before_loop', 'tribe_genesis_fix_attendee_registration_page' );
+function tribe_genesis_fix_attendee_registration_page() {
+	if ( ! function_exists( 'tribe' ) ) {
+		return;
+	}
+	try {
+		if ( tribe( 'tickets.attendee_registration' )->is_on_page() ) {
+			remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+			add_action( 'genesis_entry_content', 'the_content' );
+		}
+	} catch ( Exception $e ) {}
+}
