@@ -143,25 +143,6 @@ if( !function_exists( 'childtheme_register_auto_menu_widget' ) ) {
 	}
 }
 
-// lower the priority of genesis inpost meta boxes
-add_action( 'after_setup_theme', 'childtheme_genesis_inpost_meta_boxes' );
-if( !function_exists( 'childtheme_genesis_inpost_meta_boxes' ) ) {
-	function childtheme_genesis_inpost_meta_boxes() {
-	  // exit early if genesis isn't installed
-	  if( ! function_exists( 'genesis' ) ) {
-	    return;
-	  }
-
-	  // unhook the genesis meta box actions
-	  remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
-	  remove_action( 'admin_menu', 'genesis_add_inpost_layout_box' );
-
-	  // hook the genesis meta box actions
-	  add_action( 'admin_head', 'genesis_add_inpost_seo_box', 25 );
-	  add_action( 'admin_head', 'genesis_add_inpost_layout_box', 25 );
-	}
-}
-
 // ensure all archives have the proper containers
 //add_action( 'the_post', 'childtheme_add_archive_markup' );
 if( !function_exists( 'childtheme_add_archive_markup' ) ) {
