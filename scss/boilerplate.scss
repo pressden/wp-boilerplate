@@ -2,7 +2,7 @@
 @import "variables";
 
 // import customizations from the parent directory
-@import "../../scss/variables";
+@import "../../src/sass/variables";
 
 // import Bootstrap 4
 @import "bootstrap";
@@ -20,4 +20,4 @@
 @import "base";
 
 // import overrides from the parent directory
-@import "../../scss/theme";
+//@import "../../scss/theme";
