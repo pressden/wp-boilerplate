@@ -10,7 +10,7 @@ Welcome to the Genesis child theme boilerplate. This starter kit adds webpack, B
 You will need to have a copy of node.js installed and updated.
 https://nodejs.org/en/
 
-This project uses webpack for its installation. 
+This project uses webpack for its installation.
 https://webpack.js.org/guides/installation/
 
 Boilerplate assumes you already have a copy of the genesis framework in your themes folder.
@@ -64,33 +64,9 @@ When setting up a project for the first time several files are copied from WP-Bo
 * Files in the `dist` directory should not be modified directly. Webpack overwrites the `dist` folder every time the project is compiled.
 
 
+# Emma Port Instructions
 
-# Boostrap 4 Breakpoint Reference
-
-
-## Default breakpoints for bootstrap 4
-
-### xs = 0px 
-@include media-breakpoint-up (xs)
-@include media-breakpoint-down (xs)
-
-### sm = 576px 
-@include media-breakpoint-up (sm)
-@include media-breakpoint-down (sm)
-
-### md = 768px
-@include media-breakpoint-up (md) 
-@include media-breakpoint-down (md)
-
-### lg = 992px 
-@include media-breakpoint-up (lg) 
-@include media-breakpoint-down (lg)
-
-### xl = 1200px
-@include media-breakpoint-up (xl) 
-@include media-breakpoint-down (xl)
-
-### To set in between breakpoints
-@include media-breakpoint-between(md, xl) { ... }
-
-
+1. Migrate legacy SASS variables to `/emma-child/src/sass/_variables.scss`. Review SASS variables for conflicts and consistency.
+2. Migrate legacy SASS from `/old-theme/scss/theme.scss` to `/emma-child/src/sass/_legacy.scss`.
+3. Migrate legacy JS from `/old-theme/js/theme.js` to `/emma-child/src/js/legacy.js`.
+4. Move legacy utility widgets (3 areas) to the relevant utility widget areas emma-child. Style adjustments may be necessary.
