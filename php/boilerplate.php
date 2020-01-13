@@ -2,7 +2,7 @@
 /**********************************
  * BEGIN BOILERPLATE SETUP
  *
- * This file includes all files required by wp-boilerplateto.
+ * This file includes all files required by wp-boilerplate.
  **********************************/
 // load core files
 require_once( 'initialize.php' );
