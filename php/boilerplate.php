@@ -12,6 +12,4 @@ require_once( 'actions.php' );
 require_once( 'filters.php' );
 require_once( 'customizer.php' );
 require_once( 'vendor.php' );
-
-// load widgets
-require_once( 'lib/widgets/class-childtheme-auto-menu-widget.php' );
+require_once( 'widgets.php' );

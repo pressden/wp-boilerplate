@@ -135,14 +135,6 @@ if( !function_exists( 'childtheme_modify_client_taxonomy_query' ) ) {
 	}
 }
 
-// register the auto menu widget
-add_action( 'widgets_init', 'childtheme_register_auto_menu_widget' );
-if( !function_exists( 'childtheme_register_auto_menu_widget' ) ) {
-	function childtheme_register_auto_menu_widget() {
-		register_widget( 'Childtheme_Auto_Menu_Widget' );
-	}
-}
-
 // ensure all archives have the proper containers
 //add_action( 'the_post', 'childtheme_add_archive_markup' );
 if( !function_exists( 'childtheme_add_archive_markup' ) ) {
