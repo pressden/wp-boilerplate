@@ -8,12 +8,12 @@
 define( 'BOILERPLATE_PHP_DIR', dirname( __FILE__ ) );
 
 // load core files
-require_once( BOILERPLATE_PHP_DIR . '/php/initialize.php' );
-require_once( BOILERPLATE_PHP_DIR . '/php/bootstrap.php' );
-require_once( BOILERPLATE_PHP_DIR . '/php/helpers.php' );
-require_once( BOILERPLATE_PHP_DIR . '/php/enqueue.php' );
-require_once( BOILERPLATE_PHP_DIR . '/php/actions.php' );
-require_once( BOILERPLATE_PHP_DIR . '/php/filters.php' );
-require_once( BOILERPLATE_PHP_DIR . '/php/customizer.php' );
-require_once( BOILERPLATE_PHP_DIR . '/php/vendor.php' );
-require_once( BOILERPLATE_PHP_DIR . '/php/widgets.php' );
+require_once( BOILERPLATE_PHP_DIR . '/initialize.php' );
+require_once( BOILERPLATE_PHP_DIR . '/bootstrap.php' );
+require_once( BOILERPLATE_PHP_DIR . '/helpers.php' );
+require_once( BOILERPLATE_PHP_DIR . '/enqueue.php' );
+require_once( BOILERPLATE_PHP_DIR . '/actions.php' );
+require_once( BOILERPLATE_PHP_DIR . '/filters.php' );
+require_once( BOILERPLATE_PHP_DIR . '/customizer.php' );
+require_once( BOILERPLATE_PHP_DIR . '/vendor.php' );
+require_once( BOILERPLATE_PHP_DIR . '/widgets.php' );
