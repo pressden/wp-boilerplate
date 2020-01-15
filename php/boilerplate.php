@@ -9,7 +9,6 @@ define( 'BOILERPLATE_PHP_DIR', dirname( __FILE__ ) );
 
 // load core files
 require_once( BOILERPLATE_PHP_DIR . '/initialize.php' );
-require_once( BOILERPLATE_PHP_DIR . '/bootstrap.php' );
 require_once( BOILERPLATE_PHP_DIR . '/helpers.php' );
 require_once( BOILERPLATE_PHP_DIR . '/enqueue.php' );
 require_once( BOILERPLATE_PHP_DIR . '/actions.php' );
