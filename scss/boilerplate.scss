@@ -4,20 +4,8 @@
 // import customizations from the parent directory
 @import "../../src/sass/variables";
 
-// import Bootstrap 4
-@import "bootstrap";
-
 // import wordpress styles
 @import "wordpress";
 
-// import woocommerce styles
-@import "woocommerce";
-
-// import the events calendar styles
-@import "the-events-calendar";
-
 // import boilerplate styles
 @import "base";
-
-// import overrides from the parent directory
-//@import "../../scss/theme";
