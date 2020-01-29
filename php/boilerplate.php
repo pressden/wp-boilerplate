@@ -11,5 +11,3 @@ define( 'BOILERPLATE_PHP_DIR', dirname( __FILE__ ) );
 require_once( BOILERPLATE_PHP_DIR . '/initialize.php' );
 require_once( BOILERPLATE_PHP_DIR . '/helpers.php' );
 require_once( BOILERPLATE_PHP_DIR . '/actions.php' );
-require_once( BOILERPLATE_PHP_DIR . '/vendor.php' );
-require_once( BOILERPLATE_PHP_DIR . '/widgets.php' );
